@@ -18,28 +18,28 @@ cactbot 提供了以下模块：
 
 * raidboss: 内置时间轴与触发器：
 
-![timeline screenshot](screenshots/promo_raidboss_timeline.png)
-![triggers screenshot](screenshots/promo_raidboss_triggers.png)
+![timeline screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_raidboss_timeline.png)
+![triggers screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_raidboss_triggers.png)
 
 * oopsyraidsy: 失误和死亡报告：
 
-![oopsy screenshot](screenshots/promo_oopsy.png)
+![oopsy screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_oopsy.png)
 
 * jobs: buff与倒计时追踪显示
 
-![rdm jobs screenshot](screenshots/promo_jobs.png)
+![rdm jobs screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_jobs.png)
 
 * eureka: 尤雷卡NM地图追踪
 
-![eureka screenshot](screenshots/promo_eureka.png)
+![eureka screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_eureka.png)
 
 * fisher: 钓鱼冷却计时器
 
-![fisher screenshot](screenshots/promo_fishing.png)
+![fisher screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_fishing.png)
 
 * dps: dps统计功能
 
-![xephero screenshot](screenshots/xephero.png)
+![xephero screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/xephero.png)
 
 ### 视频样例
 
@@ -141,7 +141,8 @@ Follow all the steps above for installing cactbot first.
 
 1. Follow the instructions in the **dummy.txt** file in [CactbotOverlay/ThirdParty/OverlayPlugin](CactbotOverlay/ThirdParty/OverlayPlugin).
 1. Follow the instructions in the **dummy.txt** file in [CactbotOverlay/ThirdParty/ACT](CactbotOverlay/ThirdParty/ACT).
-1. Open the solution in Visual Studio (tested with Visual Studio 2017)ld for "Release" and "x64".
+1. Open the solution in Visual Studio (tested with Visual Studio 2017).
+1. Build for "Release" and "x64".
 1. The plugin will be built as **bin/x64/Release/CactbotOverlay.dll**.
 1. Copy the plugin to the Advanced Combat Tracker\\OverlayPlugin\\addons\\ directory
 
@@ -174,7 +175,7 @@ for text and sound alerts are found in [ui/raidboss/data/triggers](ui/raidboss/d
 In this screenshot, the raidboss module is highlighted, with the timeline circled in red, and the
 text alerts circled in yellow, with an `alert`-level text message visible.
 
-![raidboss screenshot](screenshots/Raidboss.png)
+![raidboss screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/Raidboss.png)
 
 ### [oopsyraidsy](ui/oopsyraidsy) module
 
@@ -188,7 +189,7 @@ When mistakes are made that are avoidable, oopsy logs warning (:warning:) and fa
 
 Mistake triggers are specified for individual fights in the [ui/oopsyraidsy/data](ui/oopsyraidsy/data) folder.
 
-![oopsy screenshot](screenshots/promo_oopsy.png)
+![oopsy screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_oopsy.png)
 
 ### [jobs](ui/jobs) module
 
@@ -209,7 +210,7 @@ as Red Mage white/black mana tracking is circled in purple, with the large raid 
 beside it in orange. The first step of the melee combo has been executed, which is displayed as the yellow
 box above the health bar. The proc tracking is circled below in green.
 
-![jobs screenshot](screenshots/Jobs.png)
+![jobs screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/Jobs.png)
 
 ### [eureka](ui/eureka) module
 
@@ -227,7 +228,7 @@ copy the list of currently dead NMs, you can paste it in game, e.g.
 
 If you do not see the emoji, make sure you have installed [this Windows update](https://support.microsoft.com/en-us/help/2729094/an-update-for-the-segoe-ui-symbol-font-in-windows-7-and-in-windows-ser).
 
-![eureka screenshot](screenshots/promo_eureka.png)
+![eureka screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_eureka.png)
 
 ### [fisher](ui/fisher) module
 
@@ -235,7 +236,7 @@ To use this module, point cactbot at **ui/fisher/fisher.html**
 
 When you cast your line at a fishing hole, this module keeps track of when you reel in particular fish so that you know what you might be getting when you hook it.
 
-![fishing screenshot](screenshots/promo_fishing.png)
+![fishing screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_fishing.png)
 
 ### [dps](ui/dps) meters
 
@@ -248,12 +249,12 @@ The [xephero](ui/dps/xephero) dps meter is based on the same dps meter built for
 with the additional ability to do per-phase dps tracking, displayed in additional columns.
 In the screenshot below the phases are named B1, B2, B3.  These autogenerate from dungeon bosses, but could be used to differentiate raid fight phases.
 
-![xephero screenshot](screenshots/xephero.png)
+![xephero screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/xephero.png)
 
 The [rdmty](ui/dps/rdmty) dps meter is based on the same dps meter for miniparse, and updated
 for Stormblood jobs and recolored to match [fflogs](http://fflogs.com).
 
-![rdmty screenshot](screenshots/rdmty.png)
+![rdmty screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/rdmty.png)
 
 ### [pull counter](ui/pullcounter) module
 
@@ -262,7 +263,7 @@ This is primarily for folks who stream a lot and want to review video footage.
 Having a number on screen makes it easy to scrub through video and find
 particular pulls to review.
 
-![pull counter screenshot](screenshots/pullcounter.png)
+![pull counter screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/pullcounter.png)
 
 ### [test](ui/test) module
 
@@ -272,7 +273,7 @@ This module is just an onscreen test of cactbot variables and is not meant to be
 It can be useful to try out to make sure everything is working as expected or to use to help debug
 [writing your own module](AdvancedCactbot.md#writing-a-cactbot-ui-module).
 
-![test screenshot](screenshots/test.png)
+![test screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/test.png)
 
 ### Adding overlay modules
 
@@ -283,24 +284,24 @@ To add a cactbot module is the same as adding any overlay plugin.
 1. Open ACT.
 1. Navigate to the Plugins tab of ACT and then the OverlayPlugin.dll tab inside it.
 
-    ![overlay plugin tab screenshot](screenshots/OverlayPluginTab.png)
+    ![overlay plugin tab screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginTab.png)
 
 1. Click the "New" button and then select Cactbot in the "Type" dropdown.
 
-    ![new overlay plugin screenshot](screenshots/OverlayPluginNew.png)
+    ![new overlay plugin screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginNew.png)
 
 1. Type in any name you'd like as the name of this overlay, e.g. `raidbossy`.
 1. A good example to start with is the raidboss module.  Set the filename to be **ui/raidboss/raidboss.html**.  Your config should look like this.
 
-    ![raidboss plugin config](screenshots/OverlayPluginRaidbossConfig.png)
+    ![raidboss plugin config](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossConfig.png)
 
 1. At this point, you should see some bunched up test UI appear on screen.  cactbot provides default test UI and a blue background to help with resizing and placing overlays on screen.  These all go away when the overlay is locked in the config panel for the overlay.
 
-    ![raidboss plugin sizing](screenshots/OverlayPluginRaidbossSizing.png)
+    ![raidboss plugin sizing](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossSizing.png)
 
 1. Uncheck the **Enable Clickthru** box on the config panel.  Then, in FFXIV, click and drag the lower right corner of the raidboss overlay to resize it.  Click and drag anywhere else on the raidboss overlay to move it.  This will make it look a lot better.  You can [configure this with CSS](AdvancedCactbot.md#configuring-ui-modules) if you want even more control.  It should look something like this:
 
-    ![raidboss plugin final](screenshots/OverlayPluginRaidbossFinalSize.png)
+    ![raidboss plugin final](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossFinalSize.png)
 
 1. Once the overlay is in the right place, check the **Lock Overlay** and the **Enable Clickthru** boxes.
 
@@ -319,4 +320,4 @@ cactbot is tested and works with the English, German and French versions of Fina
 Unicode characters are supported thoughout, through the use of the helpers in the
 [resources/regexes.js](resources/regexes.js) file. However [timelines](ui/raidboss/data/timelines)
 and log event [triggers](ui/raidboss/data/triggers) may be incorrect if names that appear in the
-ACT log events are different..
+ACT log events are different.
