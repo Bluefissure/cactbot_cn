@@ -15,6 +15,8 @@ cactbot 是一个给 [最终幻想14](http://ff.sdo.com)开发的高难副本悬
 
 本项目为中文本地化的临时项目，原项目地址：[quisquous's cactbot](https://github.com/quisquous/cactbot)
 
+如果您想参与本地化过程，请参考[这篇文档](https://github.com/Bluefissure/cactbot_cn/blob/master/docs/LocalizeGuide.md)
+
 cactbot 提供了以下模块：
 
 * raidboss: 内置时间轴与触发器：
