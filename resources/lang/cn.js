@@ -55,10 +55,10 @@ class CactbotLanguageCN extends CactbotLanguage {
       return /:(\y{Name})取消了战斗开始倒计时。/;
     };
     this.areaSealRegex = function() {
-      return /:(.*)封锁还有(\y{float})秒/;
+      return /:距(.*)被封锁还有\y{Float}秒/;
     };
     this.areaUnsealRegex = function() {
-      return /:(.*)封锁解除了/;
+      return /:(.*)的封锁解除了/;
     };
   }
 }
