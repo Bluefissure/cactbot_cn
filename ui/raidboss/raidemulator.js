@@ -18,7 +18,7 @@ class LogCollector {
       en: / 00:0839:(.*) will be sealed off in /,
       de: Regexes.Parse(/ 00:0839:Noch \y{Float} Sekunden, bis sich (.*) schließt/),
       fr: / 00:0839:Fermeture (.*) dans /,
-      cn: / 00:0839:(.*)封锁解除了。/,
+      cn: / 00:0839:(.*)距离被封锁还有\y{Float}秒。/,
     };
     this.unsealRegexes = {
       ja: / 00:0839:(.*)の封鎖が解かれた……/,
