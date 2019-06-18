@@ -13,6 +13,7 @@
 
 cactbot 是一个给 [最终幻想14](http://ff.sdo.com)开发的高难副本悬浮窗系统。本项目是 [Advanced Combat Tracker](http://advancedcombattracker.com/) 工具中 [hibiyasleep's OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin) 插件的插件。
 
+本项目为中文本地化的临时项目，原项目地址：[quisquous's cactbot](https://github.com/quisquous/cactbot)
 
 cactbot 提供了以下模块：
 
