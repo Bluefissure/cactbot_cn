@@ -254,12 +254,9 @@ cactbot的Javascript API。  cactbot 会自动对结束的战斗分段，所以�
 
 ### [pull counter](ui/pullcounter) 模块
 
-研究中，翻译会在测试可用后进行。
-
-This small module sticks the current pull count for raiding bosses on screen.
-This is primarily for folks who stream a lot and want to review video footage.
-Having a number on screen makes it easy to scrub through video and find
-particular pulls to review.
+这个小模块可以在屏幕上显示当前的战斗次数计数。
+这主要适用于主播或者正在录制高难副本战斗的人。
+在屏幕上显示一个数字可以轻松浏览视频并查找到对应的战斗。
 
 ![pull counter screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/pullcounter.png)
 
