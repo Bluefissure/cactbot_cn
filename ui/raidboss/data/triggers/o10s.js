@@ -9,7 +9,7 @@
 
 // O10S - Alphascape 2.0 Savage
 [{
-  zoneRegex: /^(Alphascape V2.0 \(Savage\)|欧米茄零式时空狭缝 阿尔法幻境2)$/,
+  zoneRegex: /^(Alphascape V2.0 \(Savage\)|欧米茄零式时空狭缝 \(阿尔法幻境2\))$/,
   timelineFile: 'o10s.txt',
   triggers: [
     {
@@ -401,6 +401,7 @@
     {
       "locale": "cn",
       "replaceSync": {
+        "I am Midgardsormr": "我乃尘世幻龙",
         "Ancient Dragon": "远古之龙",
         "Ancient dragon": "远古之龙",
         "Engage!": "战斗开始！",
@@ -413,7 +414,7 @@
       "replaceText": {
         "Akh Morn": "死亡轮回",
         "Akh Rhai": "天光轮回",
-        "Azure Wings": "",
+        "Azure Wings": "苍翼之焰",
         "Cauterize": "灼热俯冲",
         "Coil": "",
         "Crimson Breath": "深红吐息",
@@ -436,19 +437,19 @@
         "Touchdown": "空降",
         "attack": "攻击",
         // FIXME
-        'Flip': 'Flip',
-        'Spin': 'Spin',
-        'Cardinals': 'Cardinals',
-        'Corners': 'Corners',
-        'In': 'In',
-        'Out': 'Out',
+        'Flip': '横转',
+        'Spin': '竖转',
+        'Cardinals': '靠边',
+        'Corners': '角落',
+        'In': '靠近',
+        'Out': '远离',
         'Flip/Spin': 'Flip/Spin',
-        'In/Out': 'In/Out',
-        'Corners/Cardinals': 'Corners/Cardinals',
-        'Shaker/Thunder': 'Shaker/Thunder',
+        'In/Out': '靠近/远离',
+        'Corners/Cardinals': '靠边/角落',
+        'Shaker/Thunder': '大地摇动/闪雷风暴',
         ' ready': ' ready',
         'Signal': 'Signal',
-        'Position': 'Position',
+        'Position': '站位',
       },
       "~effectNames": {
         "Arcane Bulwark": "魔法障壁",
@@ -459,7 +460,7 @@
         "Landborne": "地之力",
         "Skyborne": "天之力",
         "Thin Ice": "冰面"
-      }
+      },
     },
   ],
 }];
