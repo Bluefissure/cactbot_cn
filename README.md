@@ -118,13 +118,13 @@ OverlayPlugin，而不是它的原作者RainbowMage的版本。
 
 如果您遇到错误说找不到 **FFXIV_ACT_Plugin.dll**，请确保 **FFXIV_ACT_Plugin.dll** 和 **Advanced Combat Tracker.exe** 在同一目录。
 
-如果您在 OverlayPlugin 的控制太重得到了类似 `Exception in SendFastRateEvents: Method not found: 'Void RainbowMage.HtmlRenderer.Renderer.ExecuteScript(System.String)'.` 的错误，说明您仍在使用 RainbowMage 版本的 OverlayPlugin ，如上文所述，您需要升级最新的64位版本的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
+如果您在 OverlayPlugin 的控制台中得到了类似 `Exception in SendFastRateEvents: Method not found: 'Void RainbowMage.HtmlRenderer.Renderer.ExecuteScript(System.String)'.` 的错误，说明您仍在使用 RainbowMage 版本的 OverlayPlugin ，如上文所述，您需要升级最新的64位版本的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
 
-如果您在 OverlayPlugin 的控制太重得到了类似 `Uncaught TypeError: window.OverlayPluginApi.overlayMessage is not a function` 的错误，说明您仍在使用老版本的 OverlayPlugin ，您需要升级 **最新的64位版本** 的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
+如果您在 OverlayPlugin 的控制台中得到了类似 `Uncaught TypeError: window.OverlayPluginApi.overlayMessage is not a function` 的错误，说明您仍在使用老版本的 OverlayPlugin ，您需要升级 **最新的64位版本** 的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
 
-如果您在 OverlayPlugin 的控制太重得到了类似 `Error: (overlay): C:\Program Files (x86)\Advanced Combat Tracker\OverlayPlugin\addons\CactbotOverlay.dll: System.IO.FileNotFoundException: Could not load file or assembly 'Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' or one of its dependencies. The system cannot find the file specified.` 的错误，说明您仍在使用老版本的 OverlayPlugin ，您需要升级 **最新的64位版本** 的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
+如果您在 OverlayPlugin 的控制台中得到了类似 `Error: (overlay): C:\Program Files (x86)\Advanced Combat Tracker\OverlayPlugin\addons\CactbotOverlay.dll: System.IO.FileNotFoundException: Could not load file or assembly 'Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' or one of its dependencies. The system cannot find the file specified.` 的错误，说明您仍在使用老版本的 OverlayPlugin ，您需要升级 **最新的64位版本** 的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
 
-如果您在 OverlayPlugin 的控制太重得到了类似 `System.MissingMethodException: Method not found: '!!0[] System.Array.Empty()` 的错误，说明您的.NET框架版本不符合要求，请安装 [.NET Framework](https://www.microsoft.com/net/download/framework) 4.6.1或更高版本。
+如果您在 OverlayPlugin 的控制台中得到了类似 `System.MissingMethodException: Method not found: '!!0[] System.Array.Empty()` 的错误，说明您的.NET框架版本不符合要求，请安装 [.NET Framework](https://www.microsoft.com/net/download/framework) 4.6.1或更高版本。
 
 如果您在启动 OverlayPlugin 时遇到了 [CAS policy](https://blogs.msdn.microsoft.com/drew/2009/12/23/xunit-and-td-net-fixing-the-attempt-was-made-to-load-an-assembly-from-a-network-location-problem/) 错误，比如 `An attempt was made to load an assembly from a network location which would have caused the assembly to be sandboxed in previous version of the .NET Framework.` 那么说明您可能没有解锁部分或者全部DLL文件（包括hibiyasleep与cactbot的）。首先关掉ACT，然后解锁所有的DLL文件。最简单的解锁方法是在插件仍是zip文件时，通过右键属性解锁。最后，重启ACT。
 
@@ -307,7 +307,7 @@ particular pulls to review.
 
     ![raidboss plugin sizing](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossSizing.png)
 
-1. 取消配置界面中的 **Enable Clickthru** 选项，然后进入FFXIV按下悬浮窗的右下角并拖动来改变窗口的大小。 点击并拖动来移动窗口的位置，从而让其看起来更顺眼。您也可以 [更改CSS文件](AdvancedCactbot.md#configuring-ui-modules) 如果您希望进一步美化。最后它应该长成这样：
+1. 取消配置界面中的 **Enable Clickthru** 选项，然后进入FFXIV按下悬浮窗的右下角并拖动来改变窗口的大小。 点击并拖动来移动窗口的位置，从而让其看起来更顺眼。如果您希望进一步美化也可以 [更改CSS文件](AdvancedCactbot.md#configuring-ui-modules)。最后它应该长成这样：
 
     ![raidboss plugin final](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossFinalSize.png)
 
@@ -328,4 +328,4 @@ cactbot 基于最终幻想14的英语、德语与法语客户端进行测试与�
 通过[resources/regexes.js](resources/regexes.js)文件中声明的正则表达式，Unicode字符也可以被支持。但是 [时间轴](ui/raidboss/data/timelines)
 和日志事件的 [触发器](ui/raidboss/data/triggers) 可能由于ACT日志中的对应名称不匹配而失效。
 
-但是听说某獭姓宠物爹爹正在召集人手增强触发器/时间轴来进一步支持其他的服务器。
+听说某獭姓宠物的爹爹正在召集人手增强触发器/时间轴来进一步支持其他（指中国）服务器。
