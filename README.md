@@ -55,7 +55,7 @@ cactbot 提供了以下模块：
 
 安装 [.NET 运行框架](https://www.microsoft.com/net/download/framework)  4.6.1 或更高版本。
 
-您必须启用 [DirectX 11](http://imgur.com/TjcnjmG) 模式。.
+您必须启用游戏的 [DirectX 11](http://imgur.com/TjcnjmG) 模式。
 
 安装64位版本的 [Advanced Combat Tracker](http://advancedcombattracker.com/)。
 
@@ -110,35 +110,35 @@ OverlayPlugin，而不是它的原作者RainbowMage的版本。
 
 1. 在URL中选中您想添加的html文件。
 
-1. In the URL field, browse to an html file to load.
-
     您可以通过加载[ui/test/test.html](ui/test/test.html)来测试安装过程无误。
 
-更多的cactbot悬浮窗安装指南，请参考 [Adding Overlay Modules](#adding-overlay-modules) 小节。
+更多的cactbot悬浮窗安装指南，请参考 [添加悬浮窗](#添加悬浮窗) 小节。
 
-### Potential errors and workarounds
+### 可能出现的错误与解决方案
 
-If you get an error that it can't find **FFXIV_ACT_Plugin.dll**, make sure the **FFXIV_ACT_Plugin.dll** is in the same directory as **Advanced Combat Tracker.exe**.
+如果您遇到错误说找不到 **FFXIV_ACT_Plugin.dll**，请确保 **FFXIV_ACT_Plugin.dll** 和 **Advanced Combat Tracker.exe** 在同一目录。
 
-If you get an error in the OverlayPlugin console similar to `Exception in SendFastRateEvents: Method not found: 'Void RainbowMage.HtmlRenderer.Renderer.ExecuteScript(System.String)'.` then you are still using the RainbowMage version of OverlayPlugin and need to upgrade to the latest x64 full version of the [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) instead.
+如果您在 OverlayPlugin 的控制太重得到了类似 `Exception in SendFastRateEvents: Method not found: 'Void RainbowMage.HtmlRenderer.Renderer.ExecuteScript(System.String)'.` 的错误，说明您仍在使用 RainbowMage 版本的 OverlayPlugin ，如上文所述，您需要升级最新的64位版本的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
 
-If you get an error on the OverlayPlugin console similar to `Uncaught TypeError: window.OverlayPluginApi.overlayMessage is not a function`, then you are using an earlier version of the OverlayPlugin.  You need to be using the latest x64 full version of the [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest).
+如果您在 OverlayPlugin 的控制太重得到了类似 `Uncaught TypeError: window.OverlayPluginApi.overlayMessage is not a function` 的错误，说明您仍在使用老版本的 OverlayPlugin ，您需要升级 **最新的64位版本** 的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
 
-If you get an error in the OverlayPlugin console similar to `Error: (overlay): C:\Program Files (x86)\Advanced Combat Tracker\OverlayPlugin\addons\CactbotOverlay.dll: System.IO.FileNotFoundException: Could not load file or assembly 'Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' or one of its dependencies. The system cannot find the file specified.` then you have likely installed the wrong version of the OverlayPlugin.  Please reinstall the latest x64 full version of the [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest).
+如果您在 OverlayPlugin 的控制太重得到了类似 `Error: (overlay): C:\Program Files (x86)\Advanced Combat Tracker\OverlayPlugin\addons\CactbotOverlay.dll: System.IO.FileNotFoundException: Could not load file or assembly 'Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' or one of its dependencies. The system cannot find the file specified.` 的错误，说明您仍在使用老版本的 OverlayPlugin ，您需要升级 **最新的64位版本** 的 [hibiyasleep OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) 。
 
-If you get an error in the OverlayPlugin console similar to `System.MissingMethodException: Method not found: '!!0[] System.Array.Empty()` then you have installed the wrong .NET framework version.  Please install the [.NET Framework](https://www.microsoft.com/net/download/framework) version 4.6.1 or above.
+如果您在 OverlayPlugin 的控制太重得到了类似 `System.MissingMethodException: Method not found: '!!0[] System.Array.Empty()` 的错误，说明您的.NET框架版本不符合要求，请安装 [.NET Framework](https://www.microsoft.com/net/download/framework) 4.6.1或更高版本。
 
-If you get a [CAS policy](https://blogs.msdn.microsoft.com/drew/2009/12/23/xunit-and-td-net-fixing-the-attempt-was-made-to-load-an-assembly-from-a-network-location-problem/) error on starting the OverlayPlugin, such as `An attempt was made to load an assembly from a network location which would have caused the assembly to be sandboxed in previous version of the .NET Framework.` then this means that you have forgotten to unblock some/all of your DLLs (either hibiyasleep or cactbot).  First, stop ACT.  Then, unblock everything; the easiest way is to unblock the original zip file and re-extract rather than unblocking every file individually.  Finally, restart ACT again.
+如果您在启动 OverlayPlugin 时遇到了 [CAS policy](https://blogs.msdn.microsoft.com/drew/2009/12/23/xunit-and-td-net-fixing-the-attempt-was-made-to-load-an-assembly-from-a-network-location-problem/) 错误，比如 `An attempt was made to load an assembly from a network location which would have caused the assembly to be sandboxed in previous version of the .NET Framework.` 那么说明您可能没有解锁部分或者全部DLL文件（包括hibiyasleep与cactbot的）。首先关掉ACT，然后解锁所有的DLL文件。最简单的解锁方法是在插件仍是zip文件时，通过右键属性解锁。最后，重启ACT。
 
-If you get an overlay plugin error similar to `Error: (overlay): Exception in SendFastRateEvents: Could not load file or assembly 'FFXIV_ACT_Plugin, Version=(version), Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.` then you likely need to unblock the ffxiv plugin.  See the instructions above for unblocking DLLs.
+如果您遇到了一个类似于 `Error: (overlay): Exception in SendFastRateEvents: Could not load file or assembly 'FFXIV_ACT_Plugin, Version=(version), Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.` 的悬浮窗错误，那么您可能需要解锁游戏解析插件。参考上文解锁DLL的相关操作。
 
-If you get an ACT dialog that says `Invalid Plugin` and `This assembly does not have a class that implements ACT's plugin interface`, then you are loading the plugin incorrectly.  Cactbot is an overlay and not a direct ACT plugin.  Plugins like **FFXIV_ACT_PLUGIN.dll** and **OverlayPlugin.dll** are ACT plugins and are loaded via ACT -> Plugins -> Plugin Listing -> Add/Enable Plugin.  Cactbot is an overlay plugin.  You load it via going to Plugins -> OverlayPlugin.dll -> New.  See the [adding overlay modules](#adding-overlay-modules) section for more details.
+如果您遇到了一个ACT的弹窗，报错 `Invalid Plugin` 和 `This assembly does not have a class that implements ACT's plugin interface`，那么您可能在以错误的方式加载插件。 Cactbot 是一个悬浮窗，而不是ACT插件。 诸如 **FFXIV_ACT_PLUGIN.dll** 和 **OverlayPlugin.dll** 的ACT插件通过 ACT -> Plugins -> Plugin Listing -> Add/Enable Plugin 的方式加载。 Cactbot 是OverlayPlugin的悬浮窗，需要通过 Plugins -> OverlayPlugin.dll -> New 的方式加载，更多信息请参考 [添加悬浮窗](#添加悬浮窗) 小节。
 
-If triggers or pieces of the UI do not work, ensure that "Disable Parsing from Network Data" is **not** checked in the FFXIV plugin settings. Network data is required for accurate trigger timing.
+如果触发器等UI不工作，请确认游戏解析插件中的 "Disable Parsing from Network Data" 选项**没有**被选中，触发器的计时需要通过网络数据进行同步。
 
-If you are using cactbot for dps parsing and you don't get any data, make sure that the DPS update rate is set to a number higher than zero in your plugin config.  Setting it to 3 is a good default.
+如果您使用 cactbot 作为 dps 解析与美化但是无法得到数据，请确认插件设置中的DPS刷新速率被设定为大于0的值。设置为3是一个比较好的选择。
 
-## Building from source
+## 从源码构建
+
+需要从源码构建的dalao应该不需要我翻译.jpg
 
 Follow all the steps above for installing cactbot first.
 
@@ -149,38 +149,38 @@ Follow all the steps above for installing cactbot first.
 1. The plugin will be built as **bin/x64/Release/CactbotOverlay.dll**.
 1. Copy the plugin to the Advanced Combat Tracker\\OverlayPlugin\\addons\\ directory
 
-## UI module overview
+## UI模块概览
 
-The [ui/](ui/) directory contains cactbot's ui modules.  If you installed cactbot following the instructions above, this will most likely be **C:\\...\\Advanced Combat Tracker\\OverlayPlugin\\cactbot\\ui**.
+[ui/](ui/) 文件夹包含了cactbot的UI模块，如果您按照上述的指南安装的cactbot，该目录位于 **C:\\...\\Advanced Combat Tracker\\OverlayPlugin\\cactbot\\ui** 。
 
-Each cactbot ui module should be added as a separate overlay.  See the [Adding Overlay Modules](#adding-overlay-modules) section for more details about setup.
+每一个cactbot的UI模块需要被分别添加为悬浮窗，参考 [添加悬浮窗](#添加悬浮窗) 小节来获得进一步信息。
 
-### [raidboss](ui/raidboss) module
+### [raidboss](ui/raidboss) 模块
 
-To use this module, point cactbot at **ui/raidboss/raidboss.html**.
+使用这个模块，需要将 cactbot 指定为 **ui/raidboss/raidboss.html** 。
 
-This module provides a visual timeline of upcoming events in a fight, as well as text and audio
-notifications to help increase raid awareness. Text and sound alerts can be based on the fight
-timeline, or come from log messages that occur in the game, similar to ACT's "Custom Triggers".
-The module is designed to look and feel similar to the
-[BigWigs Bossmods](https://mods.curse.com/addons/wow/big-wigs) addon for World of Warcraft.
+这个模块给战斗中的时间轴和即将到来的战斗事件提供了可视化显示，包含了文字和声音提示。这些提示可以基于战斗事件轴，
+或战斗中的网络日志消息，与ACT提供的"自定义触发器"功能类似。这个模块是仿照魔兽时间中的[BigWigs Bossmods](https://mods.curse.com/addons/wow/big-wigs)
+插件制作的。
 
-Fight timelines are provided in files designed for the [ACT Timeline](https://github.com/grindingcoil/act_timeline)
-plugin, [documented here](http://dtguilds.enjin.com/forum/m/37032836/viewthread/26353492-act-timeline-plugin)
-with [some extensions](ui/raidboss/data/timelines/README.txt).
+文件中提供的战斗事件轴按照 [ACT Timeline](https://github.com/grindingcoil/act_timeline) 插件的格式设计，
+[参考文档](http://dtguilds.enjin.com/forum/m/37032836/viewthread/26353492-act-timeline-plugin)
+[额外扩展](ui/raidboss/data/timelines/README.txt)。
 
-There are three levels of text alerts, in order of escalating importance: `info`, `alert`, and `alarm`.
-Text messages will be in one of these, and more important levels are larger and more eye grabbing colors.  [Text-to-speech can be configured](AdvancedCactbot.md#text-to-speech) if you prefer that over on screen text.
+文字警报有三种级别，按照警报等级严重程度排序分别为： `info`, `alert` 和 `alarm`。
+文字警报会是这三种级别之一，更严重的警报会有更大的字体与更醒目的颜色。如果您有需要可以进行 [Text-to-speech 的相关设置](AdvancedCactbot.md#text-to-speech)。
 
-Timeline files are found in [ui/raidboss/data/timelines](ui/raidboss/data/timelines). Triggers
-for text and sound alerts are found in [ui/raidboss/data/triggers](ui/raidboss/data/triggers).
+时间轴文件位置为 [ui/raidboss/data/timelines](ui/raidboss/data/timelines)。 文
+字与语音的触发器文件位于 [ui/raidboss/data/triggers](ui/raidboss/data/triggers)。
 
-In this screenshot, the raidboss module is highlighted, with the timeline circled in red, and the
-text alerts circled in yellow, with an `alert`-level text message visible.
+在此截图中，raidboss 模块已被高亮，红色圈出的是时间轴，
+文字提示用黄色圈出，目前是 `alert`级 的一条文字提醒消息。
 
 ![raidboss screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/Raidboss.png)
 
-### [oopsyraidsy](ui/oopsyraidsy) module
+### [oopsyraidsy](ui/oopsyraidsy) 模块
+
+研究中，翻译会在测试可用后进行。
 
 To use this module, point cactbot at **ui/oopsyraidsy/oopsyraidsy.html**.
 
@@ -194,7 +194,9 @@ Mistake triggers are specified for individual fights in the [ui/oopsyraidsy/data
 
 ![oopsy screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_oopsy.png)
 
-### [jobs](ui/jobs) module
+### [jobs](ui/jobs) 模块
+
+研究中，翻译会在测试可用后进行。
 
 To use this module, point cactbot at **ui/jobs/jobs.html**
 
@@ -215,7 +217,9 @@ box above the health bar. The proc tracking is circled below in green.
 
 ![jobs screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/Jobs.png)
 
-### [eureka](ui/eureka) module
+### [eureka](ui/eureka) 模块
+
+研究中，翻译会在测试可用后进行。
 
 To use this module, point cactbot at **ui/eureka/eureka.html**
 
@@ -233,7 +237,9 @@ If you do not see the emoji, make sure you have installed [this Windows update](
 
 ![eureka screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_eureka.png)
 
-### [fisher](ui/fisher) module
+### [fisher](ui/fisher) 模块
+
+研究中，翻译会在测试可用后进行。
 
 To use this module, point cactbot at **ui/fisher/fisher.html**
 
@@ -241,25 +247,25 @@ When you cast your line at a fishing hole, this module keeps track of when you r
 
 ![fishing screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_fishing.png)
 
-### [dps](ui/dps) meters
+### [dps](ui/dps) 美化模块
 
-cactbot can be used with any dps meter overlay designed for OverlayPlugin's miniparse
-addon, with the option to build out more features through cactbot's additional Javascript
-APIs.  cactbot also auto-stops fights on wipes, so you can configure ACT's fight time to
-infinity.
+cactbot 可以被用于针对 OverlayPlugin's miniparse 插件设计的任一dps美化模板，只要它实现了
+cactbot的Javascript API。  cactbot 会自动对结束的战斗分段，所以你不能将ACT的战斗时间设置为无限。
 
-The [xephero](ui/dps/xephero) dps meter is based on the same dps meter built for miniparse,
-with the additional ability to do per-phase dps tracking, displayed in additional columns.
-In the screenshot below the phases are named B1, B2, B3.  These autogenerate from dungeon bosses, but could be used to differentiate raid fight phases.
+[xephero](ui/dps/xephero) 的dps美化基于迷你美化同样的窗口，但是提供了诸如分截断DPS跟踪、显示额外列信息
+等诸多功能。在下列截图中能看到 B1, B2, B3 三个不同阶段的DPS。这些自动生成的分阶段统计信息只能用于普通副本
+的多个boss，而不能用于raid等高难本的同一个boss的不同阶段。
 
 ![xephero screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/xephero.png)
 
-The [rdmty](ui/dps/rdmty) dps meter is based on the same dps meter for miniparse, and updated
-for Stormblood jobs and recolored to match [fflogs](http://fflogs.com).
+[rdmty](ui/dps/rdmty) 的dps美化基于迷你美化同样的窗口，按照了4.0的职业进行了重新美化，
+用以支持 [fflogs](http://fflogs.com)。
 
 ![rdmty screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/rdmty.png)
 
-### [pull counter](ui/pullcounter) module
+### [pull counter](ui/pullcounter) 模块
+
+研究中，翻译会在测试可用后进行。
 
 This small module sticks the current pull count for raiding bosses on screen.
 This is primarily for folks who stream a lot and want to review video footage.
@@ -268,59 +274,58 @@ particular pulls to review.
 
 ![pull counter screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/pullcounter.png)
 
-### [test](ui/test) module
+### [test](ui/test) 模块
 
-To use this module, point cactbot at **ui/test/test.html**
+使用这个模块，需要将 cactbot 指定为 **ui/test/test.html**
 
-This module is just an onscreen test of cactbot variables and is not meant to be used while playing.
-It can be useful to try out to make sure everything is working as expected or to use to help debug
-[writing your own module](AdvancedCactbot.md#writing-a-cactbot-ui-module).
+这个模块只是一个屏幕上显示的测试窗口，用来显示cacatbot能够获取到的变量信息。
+这个对于测试您的安装是否成功、[编写您自己的模块](AdvancedCactbot.md#writing-a-cactbot-ui-module)有帮助，而对实际游戏过程没有作用。
 
 ![test screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/test.png)
 
-### Adding overlay modules
+### 添加悬浮窗
 
-Here's an example of how to set up the raidboss overlay module.  Adding other modules is exactly the same, except you need to point the URL to a different HTML file for that specific module.
+下面将讲述如何添加 raidboss 悬浮窗模块，别的模块的操作也都相同，只需要您将URL指定为对应的HTML文件。
 
-To add a cactbot module is the same as adding any overlay plugin.
+添加一个cactbot模块和添加任意的 OverlayPlugin 悬浮窗口操作相同。
 
-1. Open ACT.
-1. Navigate to the Plugins tab of ACT and then the OverlayPlugin.dll tab inside it.
+1. 启动ACT。
+1. 来到ACT的Plugins选项卡里面的OverlayPlugin.dll子选项卡。
 
     ![overlay plugin tab screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginTab.png)
 
-1. Click the "New" button and then select Cactbot in the "Type" dropdown.
+1. 点击 "New" 按钮并选择"Type"为 Cactbot 。
 
     ![new overlay plugin screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginNew.png)
 
-1. Type in any name you'd like as the name of this overlay, e.g. `raidbossy`.
-1. A good example to start with is the raidboss module.  Set the filename to be **ui/raidboss/raidboss.html**.  Your config should look like this.
+1. 给这个悬浮窗输入一个你喜欢的名字，比如 `raidbossy`。
+1. 一个比较好的例子是拿 raidboss 模块举例，将文件名设定为 **ui/raidboss/raidboss.html** ，你的设置应该长成这样：
 
     ![raidboss plugin config](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossConfig.png)
 
-1. At this point, you should see some bunched up test UI appear on screen.  cactbot provides default test UI and a blue background to help with resizing and placing overlays on screen.  These all go away when the overlay is locked in the config panel for the overlay.
+1. 此时，你应该能看到屏幕上面的一坨测试文本与窗口。 cactbot 提供了默认的测试UI与蓝色的背景，来帮助你设置窗口大小和位置。这些测试信息都会在选中Lock时被隐藏。
 
     ![raidboss plugin sizing](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossSizing.png)
 
-1. Uncheck the **Enable Clickthru** box on the config panel.  Then, in FFXIV, click and drag the lower right corner of the raidboss overlay to resize it.  Click and drag anywhere else on the raidboss overlay to move it.  This will make it look a lot better.  You can [configure this with CSS](AdvancedCactbot.md#configuring-ui-modules) if you want even more control.  It should look something like this:
+1. 取消配置界面中的 **Enable Clickthru** 选项，然后进入FFXIV按下悬浮窗的右下角并拖动来改变窗口的大小。 点击并拖动来移动窗口的位置，从而让其看起来更顺眼。您也可以 [更改CSS文件](AdvancedCactbot.md#configuring-ui-modules) 如果您希望进一步美化。最后它应该长成这样：
 
     ![raidboss plugin final](https://github.com/Bluefissure/cactbot/raw/master/screenshots/OverlayPluginRaidbossFinalSize.png)
 
-1. Once the overlay is in the right place, check the **Lock Overlay** and the **Enable Clickthru** boxes.
+1. 当您调整好悬浮窗的位置与大小后，勾选 **Lock Overlay** 和 **Enable Clickthru** 。
 
-    The "Test bar", "ALARM TEXT", and shaded blue background will disappear once the overlay has been locked.
+    此时 "Test bar", "ALARM TEXT", 和蓝色背景都会在Lock被选中后一起隐藏。
 
-1. If you want to test the raidboss plugin, teleport to Summerford Farms, and follow [these instructions](ui/raidboss/data/timelines/test.txt).
+1. 如果您需要测试时间轴与触发器，您可以传送到中拉诺西亚的盛夏农庄并且参考这个 [指南](ui/raidboss/data/timelines/test.txt)。
 
-## Cactbot Customization
+## Cactbot自定义
 
-See [this documentation](AdvancedCactbot.md#configuring-ui-modules) for more details.
+参考 [这篇文档](AdvancedCactbot.md#configuring-ui-modules)
 
-## Supported Languages
+## 支持语言
 
-cactbot is tested and works with the English, German and French versions of Final Fantasy XIV.
+cactbot 基于最终幻想14的英语、德语与法语客户端进行测试与开发。
 
-Unicode characters are supported thoughout, through the use of the helpers in the
-[resources/regexes.js](resources/regexes.js) file. However [timelines](ui/raidboss/data/timelines)
-and log event [triggers](ui/raidboss/data/triggers) may be incorrect if names that appear in the
-ACT log events are different.
+通过[resources/regexes.js](resources/regexes.js)文件中声明的正则表达式，Unicode字符也可以被支持。但是 [时间轴](ui/raidboss/data/timelines)
+和日志事件的 [触发器](ui/raidboss/data/triggers) 可能由于ACT日志中的对应名称不匹配而失效。
+
+但是听说某獭姓宠物爹爹正在召集人手增强触发器/时间轴来进一步支持其他的服务器。
