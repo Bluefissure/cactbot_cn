@@ -8,6 +8,34 @@ let Options = {
   // 20 minutes for Ovni?
   SuppressPopMs: 60 * 20 * 1000,
   FlagTimeoutMs: 90000,
+  ZoneName:{
+    en:{
+      'Eureka Anemos': 'Eureka Anemos',
+      'Eureka Pagos': 'Eureka Pagos',
+      'Eureka Pyros': 'Eureka Pyros',
+      'Eureka Hydatos': 'Eureka Hydatos',
+    },
+    cn:{
+      'Eureka Anemos': '常风之地',
+      'Eureka Pagos': '恒冰之地',
+      'Eureka Pyros': '涌火之地',
+      'Eureka Hydatos': 'Eureka Hydatos',
+    },
+  },
+  Regex:{
+    en: {
+      'gFlagRegex': Regexes.Parse(/00:00..:(.*)Eureka (?:Anemos|Pagos|Pyros|Hydatos) \( (\y{Float})\s*, (\y{Float}) \)(.*$)/),
+      'gTrackerRegex': Regexes.Parse(/(?:https:\/\/)?ffxiv-eureka\.com\/(?!maps\/)(\S*)\/?/),
+      'gImportRegex': Regexes.Parse(/00:00..:(.*)NMs on cooldown: (\S.*\))/),
+      'gTimeRegex': Regexes.Parse(/(.*) \((\d*)m\)/),
+    },
+    cn: {
+      'gFlagRegex': Regexes.Parse(/00:00..:(.*)(?:常风之地|恒冰之地|涌火之地|Hydatos) \( (\y{Float})\s*, (\y{Float}) \)(.*$)/),
+      'gTrackerRegex': Regexes.Parse(/(?:https:\/\/)?ffxiv-eureka\.com\/(?!maps\/)(\S*)\/?/),
+      'gImportRegex': Regexes.Parse(/00:00..:(.*)冷却中的NM: (\S.*\))/),
+      'gTimeRegex': Regexes.Parse(/(.*) \((\d*)分(钟*)\)/),
+    },
+  },
   ZoneInfo: {
     'Eureka Anemos': {
       mapImage: 'anemos.png',
@@ -64,7 +92,7 @@ let Options = {
             fr: 'Seigneur',
             ja: 'ロード',
             ko: '문어',
-            cn: '领主',
+            cn: '章鱼',
           },
           mobName: {
             en: 'The Lord Of Anemos',
@@ -92,7 +120,7 @@ let Options = {
             fr: 'Teles',
             ja: 'テレス',
             ko: '텔레스',
-            cn: '忒勒斯',
+            cn: '鸟',
           },
           mobName: {
             en: 'Teles',
@@ -120,7 +148,7 @@ let Options = {
             fr: 'Emp',
             ja: 'アネモス',
             ko: '잠자리',
-            cn: '皇帝',
+            cn: '蜻蜓',
           },
           mobName: {
             en: 'The Emperor Of Anemos',
@@ -148,7 +176,7 @@ let Options = {
             fr: 'Callisto',
             ja: 'カリスト',
             ko: '칼리스토',
-            cn: '卡利斯托',
+            cn: '熊',
           },
           mobName: {
             en: 'Callisto',
@@ -206,7 +234,7 @@ let Options = {
             fr: 'Jaha',
             ja: 'ジャハ',
             ko: '자하남',
-            cn: '哲罕南',
+            cn: '台风',
           },
           mobName: {
             en: 'Jahannam',
@@ -235,7 +263,7 @@ let Options = {
             fr: 'Amemet',
             ja: 'アミメット',
             ko: '아메메트',
-            cn: '阿米特',
+            cn: '暴龙',
           },
           mobName: {
             en: 'Amemet',
@@ -291,7 +319,7 @@ let Options = {
             fr: 'Bomba',
             ja: 'ボンバ',
             ko: '봄바딜',
-            cn: '庞巴德',
+            cn: '举高高',
           },
           mobName: {
             en: 'Bombadeel',
@@ -307,7 +335,7 @@ let Options = {
             fr: 'Bomba',
             ja: 'ボンバディール',
             ko: '봄바딜',
-            cn: '庞巴德',
+            cn: '举高高',
           },
           x: 28.3,
           y: 20.4,
@@ -320,7 +348,7 @@ let Options = {
             fr: 'Serket',
             ja: 'セルケト',
             ko: '세르케트',
-            cn: '塞尔凯特',
+            cn: '蝎子',
           },
           mobName: {
             en: 'Serket',
@@ -348,7 +376,7 @@ let Options = {
             fr: 'Julika',
             ja: 'ジュリカ',
             ko: '줄리카',
-            cn: '魔花',
+            cn: '魔界花',
           },
           mobName: {
             en: 'Judgmental Julika',
@@ -364,7 +392,7 @@ let Options = {
             fr: 'Julika',
             ja: 'ジュリカ',
             ko: '줄리카',
-            cn: '花',
+            cn: '魔界花',
           },
           x: 21.9,
           y: 15.6,
@@ -562,7 +590,7 @@ let Options = {
             fr: 'Lamashtu',
             ja: 'ラマシュトゥ',
             ko: '라마슈투',
-            cn: '女人',
+            cn: '嫂子',
           },
           // 7.7, 23.3 from the tracker but mobs are farther south.
           x: 7.7,
@@ -625,6 +653,7 @@ let Options = {
             fr: 'Snow Queen',
             ja: '女王',
             ko: '눈의 여왕',
+            cn: '周冬雨',
           },
           mobName: {
             en: 'The Snow Queen',
@@ -632,6 +661,7 @@ let Options = {
             fr: 'The Snow Queen',
             ja: '雪の女王',
             ko: '눈의 여왕',
+            cn: '雪之女王',
           },
           trackerName: {
             en: 'Snow Queen',
@@ -639,6 +669,7 @@ let Options = {
             fr: 'Snow Queen',
             ja: '女王',
             ko: '눈의 여왕',
+            cn: '周冬雨',
           },
           x: 21.5,
           y: 26.5,
@@ -650,6 +681,7 @@ let Options = {
             fr: 'Taxim',
             ja: 'タキシム',
             ko: '택심',
+            cn: '读书人',
           },
           mobName: {
             en: 'Taxim',
@@ -657,6 +689,7 @@ let Options = {
             fr: 'Taxim',
             ja: 'タキシム',
             ko: '택심',
+            cn: '塔克西姆',
           },
           trackerName: {
             en: 'Taxim',
@@ -664,6 +697,7 @@ let Options = {
             fr: 'Taxim',
             ja: 'タキシム',
             ko: '택심',
+            cn: '读书人',
           },
           x: 25.5,
           y: 28.3,
@@ -676,6 +710,7 @@ let Options = {
             fr: 'Ash Dragon',
             ja: 'ドラゴン',
             ko: '용',
+            cn: '灰烬龙',
           },
           mobName: {
             en: 'Ash Dragon',
@@ -683,6 +718,7 @@ let Options = {
             fr: 'Ash Dragon',
             ja: 'アッシュドラゴン',
             ko: '잿빛 드래곤',
+            cn: '灰烬龙',
           },
           trackerName: {
             en: 'Ash Dragon',
@@ -690,6 +726,7 @@ let Options = {
             fr: 'Ash Dragon',
             ja: 'アッシュドラゴン',
             ko: '잿빛 드래곤',
+            cn: '灰烬龙',
           },
           x: 29.7,
           y: 30.0,
@@ -701,6 +738,7 @@ let Options = {
             fr: 'Glavoid',
             ja: 'グラヴォイド',
             ko: '지렁이',
+            cn: '魔虫',
           },
           mobName: {
             en: 'Glavoid',
@@ -708,6 +746,7 @@ let Options = {
             fr: 'Glavoid',
             ja: 'グラヴォイド',
             ko: '그라보이드',
+            cn: '异形魔虫',
           },
           trackerName: {
             en: 'Glavoid',
@@ -715,6 +754,7 @@ let Options = {
             fr: 'Glavoid',
             ja: 'グラヴォイド',
             ko: '그라보이드',
+            cn: '魔虫',
           },
           x: 33.0,
           y: 28.0,
@@ -726,6 +766,7 @@ let Options = {
             fr: 'Anapos',
             ja: 'アナポ',
             ko: '아나포',
+            cn: '安娜波',
           },
           mobName: {
             en: 'Anapos',
@@ -733,6 +774,7 @@ let Options = {
             fr: 'Anapos',
             ja: 'アナポ',
             ko: '아나포',
+            cn: '安娜波',
           },
           trackerName: {
             en: 'Anapos',
@@ -740,6 +782,7 @@ let Options = {
             fr: 'Anapos',
             ja: 'アナポ',
             ko: '아나포',
+            cn: '安娜波',
           },
           x: 33.0,
           y: 21.5,
@@ -752,6 +795,7 @@ let Options = {
             fr: 'Hakutaku',
             ja: 'ハクタク',
             ko: '백택',
+            cn: '白泽',
           },
           mobName: {
             en: 'Hakutaku',
@@ -759,6 +803,7 @@ let Options = {
             fr: 'Hakutaku',
             ja: 'ハクタク',
             ko: '백택',
+            cn: '白泽',
           },
           trackerName: {
             en: 'Hakutaku',
@@ -766,6 +811,7 @@ let Options = {
             fr: 'Hakutaku',
             ja: 'ハクタク',
             ko: '백택',
+            cn: '白泽',
           },
           x: 29.0,
           y: 22.5,
@@ -777,6 +823,7 @@ let Options = {
             fr: 'Igloo',
             ja: 'イグル',
             ko: '이글루',
+            cn: '雪屋王',
           },
           mobName: {
             en: 'King Igloo',
@@ -784,6 +831,7 @@ let Options = {
             fr: 'King Igloo',
             ja: 'キングイグルー',
             ko: '이글루 왕',
+            cn: '雪屋王',
           },
           trackerName: {
             en: 'Igloo',
@@ -791,6 +839,7 @@ let Options = {
             fr: 'Igloo',
             ja: 'イグル',
             ko: '이글루',
+            cn: '雪屋王',
           },
           x: 17,
           y: 16,
@@ -802,6 +851,7 @@ let Options = {
             fr: 'Asag',
             ja: 'アサグ',
             ko: '아사그',
+            cn: '阿萨格',
           },
           mobName: {
             en: 'Asag',
@@ -809,6 +859,7 @@ let Options = {
             fr: 'Asag',
             ja: 'アサグ',
             ko: '아사그',
+            cn: '阿萨格',
           },
           trackerName: {
             en: 'Asag',
@@ -816,6 +867,7 @@ let Options = {
             fr: 'Asag',
             ja: 'アサグ',
             ko: '아사그',
+            cn: '阿萨格',
           },
           x: 11.3,
           y: 10.5,
@@ -827,6 +879,7 @@ let Options = {
             fr: 'Surabhi',
             ja: 'スラビー',
             ko: '염소',
+            cn: '山羊',
           },
           mobName: {
             en: 'Surabhi',
@@ -834,6 +887,7 @@ let Options = {
             fr: 'Surabhi',
             ja: 'スラビー',
             ko: '수라비',
+            cn: '苏罗毗',
           },
           trackerName: {
             en: 'Surabhi',
@@ -841,6 +895,7 @@ let Options = {
             fr: 'Surabhi',
             ja: 'スラビー',
             ko: '수라비',
+            cn: '山羊',
           },
           x: 10.5,
           y: 20.5,
@@ -852,6 +907,7 @@ let Options = {
             fr: 'King Arthro',
             ja: 'アースロ',
             ko: '게',
+            cn: '螃蟹',
           },
           mobName: {
             en: 'King Arthro',
@@ -859,6 +915,7 @@ let Options = {
             fr: 'King Arthro',
             ja: 'キングアースロ',
             ko: '아스로 왕',
+            cn: '亚瑟罗王',
           },
           trackerName: {
             en: 'King Arthro',
@@ -866,6 +923,7 @@ let Options = {
             fr: 'King Arthro',
             ja: 'キングアースロ',
             ko: '아스로 왕',
+            cn: '螃蟹',
           },
           x: 8.0,
           y: 15.2,
@@ -878,6 +936,7 @@ let Options = {
             fr: 'Minotaurs',
             ja: 'ミノタウロス',
             ko: '미노타우루스',
+            cn: '双牛',
           },
           mobName: {
             en: 'Mindertaur',
@@ -885,6 +944,7 @@ let Options = {
             fr: 'Mindertaur',
             ja: 'Mindertaur',
             ko: '호위 타우루스',
+            cn: '牛头魔看守',
           },
           trackerName: {
             en: 'Minotaurs',
@@ -892,6 +952,7 @@ let Options = {
             fr: 'Minotaurs',
             ja: 'ミノタウロス',
             ko: '미노타우로스',
+            cn: '双牛',
           },
           x: 13.8,
           y: 18.4,
@@ -903,6 +964,7 @@ let Options = {
             fr: 'Holy Cow',
             ja: '聖牛',
             ko: '소',
+            cn: '圣牛',
           },
           mobName: {
             en: 'Holy Cow',
@@ -910,6 +972,7 @@ let Options = {
             fr: 'Holy Cow',
             ja: 'エウレカの聖牛',
             ko: '에우레카의 신성한 소',
+            cn: '优雷卡圣牛',
           },
           trackerName: {
             en: 'Holy Cow',
@@ -917,6 +980,7 @@ let Options = {
             fr: 'Holy Cow',
             ja: 'エウレカの聖牛',
             ko: '소',
+            cn: '圣牛',
           },
           x: 26,
           y: 16,
@@ -928,6 +992,7 @@ let Options = {
             fr: 'Hadhayosh',
             ja: 'ハダヨッシュ',
             ko: '베히모스',
+            cn: '贝爷',
           },
           mobName: {
             en: 'Hadhayosh',
@@ -935,6 +1000,7 @@ let Options = {
             fr: 'Hadhayosh',
             ja: 'ハダヨッシュ',
             ko: '하다요쉬',
+            cn: '哈达约什',
           },
           trackerName: {
             en: 'Hadhayosh',
@@ -942,6 +1008,7 @@ let Options = {
             fr: 'Hadhayosh',
             ja: 'ハダヨッシュ',
             ko: '베히모스',
+            cn: '贝爷',
           },
           weather: 'Thunder',
           x: 30,
@@ -954,6 +1021,7 @@ let Options = {
             fr: 'Horus',
             ja: 'ホルス',
             ko: '호루스',
+            cn: '荷鲁斯',
           },
           mobName: {
             en: 'Horus',
@@ -961,6 +1029,7 @@ let Options = {
             fr: 'Horus',
             ja: 'ホルス',
             ko: '호루스',
+            cn: '荷鲁斯',
           },
           trackerName: {
             en: 'Horus',
@@ -968,6 +1037,7 @@ let Options = {
             fr: 'Horus',
             ja: 'ホルス',
             ko: '호루스',
+            cn: '荷鲁斯',
           },
           weather: 'Heat Waves',
           x: 26,
@@ -980,6 +1050,7 @@ let Options = {
             fr: 'Mainyu',
             ja: 'マンユ',
             ko: '앙그라',
+            cn: '大眼',
           },
           mobName: {
             en: 'Arch Angra Mainyu',
@@ -987,6 +1058,7 @@ let Options = {
             fr: 'Arch Angra Mainyu',
             ja: 'アーチ・アンラ・マンユ',
             ko: '우두머리 앙그라 마이뉴',
+            cn: '总领安哥拉·曼纽',
           },
           trackerName: {
             en: 'Mainyu',
@@ -994,6 +1066,7 @@ let Options = {
             fr: 'Mainyu',
             ja: 'マンユ',
             ko: '앙그라',
+            cn: '大眼',
           },
           x: 25,
           y: 24,
@@ -1005,6 +1078,7 @@ let Options = {
             fr: 'Cassie',
             ja: 'キャシ',
             ko: '캐시',
+            cn: '凯西',
           },
           mobName: {
             en: 'Copycat Cassie',
@@ -1012,6 +1086,7 @@ let Options = {
             fr: 'Copycat Cassie',
             ja: 'コピーキャット・キャシー',
             ko: '변덕쟁이 캐시',
+            cn: '复制魔花凯西',
           },
           trackerName: {
             en: 'Cassie',
@@ -1019,6 +1094,7 @@ let Options = {
             fr: 'Cassie',
             ja: 'キャシ',
             ko: '캐시',
+            cn: '凯西',
           },
           weather: 'Blizzards',
           x: 22,
@@ -1031,6 +1107,7 @@ let Options = {
             fr: 'Louhi',
             ja: 'ロウヒ',
             ko: '로우히',
+            cn: '娄希',
           },
           mobName: {
             en: 'Louhi',
@@ -1038,6 +1115,7 @@ let Options = {
             fr: 'Louhi',
             ja: 'ロウヒ',
             ko: '로우히',
+            cn: '娄希',
           },
           trackerName: {
             en: 'Louhi',
@@ -1045,6 +1123,7 @@ let Options = {
             fr: 'Louhi',
             ja: 'ロウヒ',
             ko: '로우히',
+            cn: '娄希',
           },
           x: 36,
           y: 18.5,
@@ -1076,18 +1155,21 @@ let Options = {
             de: 'Leuko',
             fr: 'Leuco',
             ja: 'レウコ',
+            cn: '惨叫',
           },
           mobName: {
             en: 'Leucosia',
             de: 'Leukosia',
             fr: 'Leucosia',
             ja: 'レウコシアー',
+            cn: '琉科西亚',
           },
           trackerName: {
             en: 'Leucosia',
             de: 'Leucosia',
             fr: 'Leucosia',
             ja: 'レウコ',
+            cn: '惨叫',
           },
           x: 26.8,
           y: 26.3,
@@ -1099,18 +1181,21 @@ let Options = {
             de: 'Flauros',
             fr: 'Flauros',
             ja: 'フラウロス',
+            cn: '雷兽',
           },
           mobName: {
             en: 'Flauros',
             de: 'Flauros',
             fr: 'Flauros',
             ja: 'フラウロス',
+            cn: '佛劳洛斯',
           },
           trackerName: {
             en: 'Flauros',
             de: 'Flauros',
             fr: 'Flauros',
             ja: 'フラウロス',
+            cn: '雷兽',
           },
           x: 28.9,
           y: 29.2,
@@ -1121,18 +1206,21 @@ let Options = {
             de: 'Sophist',
             fr: 'Sophist',
             ja: 'ソフィスト',
+            cn: '诡辩者',
           },
           mobName: {
             en: 'The Sophist',
             de: 'Sophist',
             fr: 'The Sophist',
             ja: 'ソフィスト',
+            cn: '诡辩者',
           },
           trackerName: {
             en: 'Sophist',
             de: 'Sophist',
             fr: 'Sophist',
             ja: 'ソフィスト',
+            cn: '诡辩者',
           },
           x: 31.8,
           y: 31.0,
@@ -1143,18 +1231,21 @@ let Options = {
             de: 'Graff',
             fr: 'Graff',
             ja: 'グラフアカネ',
+            cn: '塔塔露',
           },
           mobName: {
             en: 'Graffiacane',
             de: 'Graffiacane',
             fr: 'Graffiacane',
             ja: 'グラッフアカーネ',
+            cn: '格拉菲亚卡内',
           },
           trackerName: {
             en: 'Graff',
             de: 'Graff',
             fr: 'Graff',
             ja: 'グラフアカネ',
+            cn: '塔塔露',
           },
           x: 23.5,
           y: 37.2,
@@ -1165,18 +1256,21 @@ let Options = {
             de: 'Askala',
             fr: 'Askala',
             ja: 'アスカラ',
+            cn: '阿福',
           },
           mobName: {
             en: 'Askalaphos',
             de: 'Askalaphos',
             fr: 'Askalaphos',
             ja: 'アスカラポス',
+            cn: '阿斯卡拉福斯',
           },
           trackerName: {
             en: 'Askala',
             de: 'Askala',
             fr: 'Askala',
             ja: 'アスカラ',
+            cn: '阿福',
           },
           x: 19.3,
           y: 29.0,
@@ -1188,18 +1282,21 @@ let Options = {
             de: 'Batym',
             fr: 'Batym',
             ja: 'パティム',
+            cn: '大公',
           },
           mobName: {
             en: 'Grand Duke Batym',
             de: 'Großherzog Batym',
             fr: 'Grand Duke Batym',
             ja: 'グランドデューク・パティム',
+            cn: '巴钦大公爵',
           },
           trackerName: {
             en: 'Duke Batym',
             de: 'Duke Batym',
             fr: 'Duke Batym',
             ja: 'デュークパティム',
+            cn: '大公',
           },
           x: 18.0,
           y: 14.1,
@@ -1211,18 +1308,21 @@ let Options = {
             de: 'Aetolus',
             fr: 'Aetolus',
             ja: 'アイトロス',
+            cn: '雷鸟',
           },
           mobName: {
             en: 'Aetolus',
             de: 'Aetolus',
             fr: 'Aetolus',
             ja: 'アイトロス',
+            cn: '埃托洛斯',
           },
           trackerName: {
             en: 'Aetolus',
             de: 'Aetolus',
             fr: 'Aetolus',
             ja: 'アイトロス',
+            cn: '雷鸟',
           },
           x: 10.0,
           y: 14.0,
@@ -1233,18 +1333,21 @@ let Options = {
             de: 'Lesath',
             fr: 'Lesath',
             ja: 'レサト',
+            cn: '蝎子',
           },
           mobName: {
             en: 'Lesath',
             de: 'Lesath',
             fr: 'レサト',
             ja: 'Lesath',
+            cn: '来萨特',
           },
           trackerName: {
             en: 'Lesath',
             de: 'Lesath',
             fr: 'Lesath',
             ja: 'レサト',
+            cn: '蝎子',
           },
           x: 13.2,
           y: 11.2,
@@ -1255,18 +1358,21 @@ let Options = {
             de: 'Eldthurs',
             fr: 'Eldthurs',
             ja: 'エルドスルス',
+            cn: '火巨人',
           },
           mobName: {
             en: 'Eldthurs',
             de: 'Eldthurs',
             fr: 'Eldthurs',
             ja: 'エルドスルス',
+            cn: '火巨人',
           },
           trackerName: {
             en: 'Eldthurs',
             de: 'Eldthurs',
             fr: 'Eldthurs',
             ja: 'エルドスルス',
+            cn: '火巨人',
           },
           x: 15.3,
           y: 6.8,
@@ -1277,18 +1383,21 @@ let Options = {
             de: 'Iris',
             fr: 'Iris',
             ja: 'イリス',
+            cn: '海燕',
           },
           mobName: {
             en: 'Iris',
             de: 'Iris',
             fr: 'Iris',
             ja: 'イリス',
+            cn: '伊丽丝',
           },
           trackerName: {
             en: 'Iris',
             de: 'Iris',
             fr: 'Iris',
             ja: 'イリス',
+            cn: '海燕',
           },
           x: 21.3,
           y: 12.0,
@@ -1299,18 +1408,21 @@ let Options = {
             de: 'Lamebrix',
             fr: 'Lamebrix',
             ja: 'レイムプリクス',
+            cn: '哥布林',
           },
           mobName: {
             en: 'Lamebrix Strikebocks',
             de: 'Wüterix der Söldner',
             fr: 'Lamebrix Strikebocks',
             ja: '傭兵のレイムプリクス',
+            cn: '佣兵雷姆普里克斯',
           },
           trackerName: {
             en: 'Lamebrix',
             de: 'Lamebrix',
             fr: 'Lamebrix',
             ja: 'レイムプリクス',
+            cn: '哥布林',
           },
           x: 21.9,
           y: 8.3,
@@ -1321,18 +1433,21 @@ let Options = {
             de: 'Dux',
             fr: 'Dux',
             ja: 'ドゥクス',
+            cn: '雷军',
           },
           mobName: {
             en: 'Dux',
             de: 'Dux',
             fr: 'Dux',
             ja: 'ライトニング・ドゥクス',
+            cn: '闪电督军',
           },
           trackerName: {
             en: 'Dux',
             de: 'Dux',
             fr: 'Dux',
             ja: 'ドゥクス',
+            cn: '雷军',
           },
           x: 27.4,
           y: 8.8,
@@ -1344,18 +1459,21 @@ let Options = {
             de: 'Weide',
             fr: 'Jack',
             ja: 'ジャック',
+            cn: '树人',
           },
           mobName: {
             en: 'The Weeping Willow',
             de: 'Trauerweide',
             fr: 'Lumber Jack',
             ja: 'ランバージャック・デスマッチ',
+            cn: '垂柳树人',
           },
           trackerName: {
             en: 'Jack',
             de: 'Jack',
             fr: 'Jack',
             ja: 'ランバージャック',
+            cn: '树人',
           },
           x: 30.1,
           y: 11.7,
@@ -1366,18 +1484,21 @@ let Options = {
             de: 'Glauko',
             fr: 'Glauko',
             ja: 'グラウコピス',
+            cn: '明眸',
           },
           mobName: {
             en: 'Glaukopis',
             de: 'Glaukopis',
             fr: 'Glaukopis',
             ja: 'グラウコピス',
+            cn: '明眸',
           },
           trackerName: {
             en: 'Glaukopis',
             de: 'Glaukopis',
             fr: 'Glaukopis',
             ja: 'グラウコピス',
+            cn: '明眸',
           },
           x: 32.3,
           y: 15.1,
@@ -1388,18 +1509,21 @@ let Options = {
             de: 'Yin-Yang',
             fr: 'Ying-Yang',
             ja: 'イン・ヤン',
+            cn: '阴·阳',
           },
           mobName: {
             en: 'Ying-Yang',
             de: 'Yin-Yang',
             fr: 'Ying-Yang',
             ja: 'イン・ヤン',
+            cn: '阴·阳',
           },
           trackerName: {
             en: 'Ying-Yang',
             de: 'Ying-Yang',
             fr: 'Ying-Yang',
             ja: 'インヤン',
+            cn: '阴·阳',
           },
           x: 11.4,
           y: 34.1,
@@ -1410,18 +1534,21 @@ let Options = {
             de: 'Skalli',
             fr: 'Skoll',
             ja: 'スコル',
+            cn: '狼',
           },
           mobName: {
             en: 'Skoll',
             de: 'Skalli',
             fr: 'Skoll',
             ja: 'スコル',
+            cn: '斯库尔',
           },
           trackerName: {
             en: 'Skoll',
             de: 'Skoll',
             fr: 'Skoll',
             ja: 'スコル',
+            cn: '狼',
           },
           x: 24.3,
           y: 30.1,
@@ -1433,18 +1560,21 @@ let Options = {
             de: 'Penthe',
             fr: 'Penthe',
             ja: 'ペンテ',
+            cn: '彭女士',
           },
           mobName: {
             en: 'Penthesilea',
             de: 'Penthesilea',
             fr: 'Penthesilea',
             ja: 'ペンテシレイア',
+            cn: '彭忒西勒亚',
           },
           trackerName: {
             en: 'Penthesilea',
             de: 'Penthesilea',
             fr: 'Penthesilea',
             ja: 'ペンテ',
+            cn: '彭女士',
           },
           x: 35.7,
           y: 5.9,
@@ -1766,9 +1896,9 @@ let Options = {
   },
 };
 
-let gFlagRegex = Regexes.Parse(/00:00..:(.*)(Eureka |优雷卡)(?:(Anemos|常风之地)|(Pagos|恒冰之地)|(Pyros|涌火之地)|Hydatos) \( (\y{Float})\s*, (\y{Float}) \)(.*$)/);
-let gTrackerRegex = Regexes.Parse(/(?:https:\/\/)?ffxiv-eureka\.com\/(?!maps\/)(\S*)\/?/);
-let gImportRegex = Regexes.Parse(/00:00..:(.*)(NMs on cooldown|冷却中的NM): (\S.*\))/);
+// let gFlagRegex = Regexes.Parse(/00:00..:(.*)Eureka (?:Anemos|Pagos|Pyros|Hydatos) \( (\y{Float})\s*, (\y{Float}) \)(.*$)/);
+// let gTrackerRegex = Regexes.Parse(/(?:https:\/\/)?ffxiv-eureka\.com\/(?!maps\/)(\S*)\/?/);
+// let gImportRegex = Regexes.Parse(/00:00..:(.*)(NMs on cooldown|冷却中的NM): (\S.*\))/);
 let gWeatherIcons = {
   'Gales': '&#x1F300;',
   'Fog': '&#x2601;',
@@ -1880,6 +2010,14 @@ class EurekaTracker {
 
   OnZoneChange(e) {
     this.zoneName = e.detail.zoneName.replace('The Forbidden Land, ', '');
+    this.zoneName = this.zoneName.replace('禁地优雷卡 ', '');
+    // console.log(e.detail.zoneName);
+    // console.log(this.options.ZoneName[this.options.Language]);
+    let zones = this.options.ZoneName[this.options.Language] || this.options.ZoneName['en'];
+    for (let zone in zones){
+      this.zoneName = this.zoneName.replace(this.options.ZoneName[this.options.Language][zone], zone);
+    }
+    // console.log(this.zoneName);
     this.zoneName = this.zoneName.replace('Unknown Zone (33B)', 'Eureka Hydatos');
     this.zoneInfo = this.options.ZoneInfo[this.zoneName];
     let container = document.getElementById('container');
@@ -2097,7 +2235,8 @@ class EurekaTracker {
       trackerToNM[nm.trackerName[this.options.Language].toLowerCase()] = nm;
     }
 
-    let regex = Regexes.Parse(/(.*) \((\d*)m\)/);
+    let regex = this.options.Regex[this.options.Language] || this.options.Regex['en'];
+    regex = regex['gTimeRegex'];
     let importList = importText.split(' → ');
     for (let i = 0; i < importList.length; i++) {
       let m = importList[i].match(regex);
@@ -2122,17 +2261,24 @@ class EurekaTracker {
       return;
     for (let idx = 0; idx < e.detail.logs.length; idx++) {
       let log = e.detail.logs[idx];
+      let gRegex = this.options.Regex[this.options.Language] || this.options.Regex['en'];
+      let gFlagRegex = gRegex['gFlagRegex'];
       let match = log.match(gFlagRegex);
-      if (match)
+      if (match){
         this.AddFlag(match[2], match[3], match[1], match[4]);
-
+        // console.log("matched gFlagRegex");
+      }
+      let gTrackerRegex = gRegex['gTrackerRegex'];
       match = log.match(gTrackerRegex);
-      if (match)
+      if (match){
         this.currentTracker = match[1];
-
+        // console.log("matched gTrackerRegex");
+      }
+      let gImportRegex = gRegex['gImportRegex'];
       match = log.match(gImportRegex);
       if (match) {
         this.ImportFromTracker(match[2]);
+        // console.log("matched gImportRegex");
         continue;
       }
       if (log.indexOf('03:Added new combatant ') >= 0 || log.indexOf('00:0839:') >= 0) {
@@ -2177,6 +2323,11 @@ class EurekaTracker {
         'elemental',
         'faerie',
         'fary',
+        '元灵',
+        '凉粉',
+        '辣条',
+        '冰粉',
+        '酸辣粉',
       ],
       raise: [
         'raise',
@@ -2184,6 +2335,12 @@ class EurekaTracker {
         'res ',
         ' res',
         'raise plz',
+      ],
+      '999': [
+        '999',
+        '救命',
+        '救救',
+        '狗狗',
       ],
     };
     let keys = Object.keys(dict);
@@ -2198,17 +2355,19 @@ class EurekaTracker {
   }
 
   AddFlag(x, y, beforeText, afterText) {
+    let simplify = this.SimplifyText(beforeText, afterText);
+    if (simplify) {
+      beforeText = simplify;
+      afterText = '';
+    }
+
     // https://github.com/ravahn/FFXIV_ACT_Plugin/issues/160
     beforeText = beforeText.replace(/[^\x00-\x7F]/g, '').trim();
     afterText = afterText.replace(/[^\x00-\x7F]/g, '').trim();
 
     beforeText = beforeText.replace(/(?: at|@)$/, '');
 
-    let simplify = this.SimplifyText(beforeText, afterText);
-    if (simplify) {
-      beforeText = simplify;
-      afterText = '';
-    }
+    
 
     let container = document.getElementById('flag-labels');
     let label = document.createElement('div');
