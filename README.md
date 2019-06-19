@@ -180,66 +180,55 @@ Follow all the steps above for installing cactbot first.
 
 ### [oopsyraidsy](ui/oopsyraidsy) 模块
 
-研究中，翻译会在测试可用后进行。
+使用这个模块，需要将 cactbot 指定为 **ui/oopsyraidsy/oopsyraidsy.html**.
 
-To use this module, point cactbot at **ui/oopsyraidsy/oopsyraidsy.html**.
+这个模块提供了失误追踪与死亡报告。Oopsy raidsy是为了减少分析战斗中特定成员的死亡原因而设计的。在一场战斗中，只有有限部分的错误会被显示出来（为了避免刷屏），但是战斗结束后会生成全部的报告。
 
-This module provides mistake tracking and death reporting.  Oopsy raidsy is meant to reduce the time wasted understanding what went wrong on fights and how people died.  During the fight, only a limited number of mistakes are shown (to avoid clutter), but afterwards a full scrollable list is displayed.
+当某人死亡时，他临死前承受的最后一次攻击会被log记录下来。比如，如果log说":skull: Poutine: Iron Chariot (82173/23703)"这就意味着 Poutine 最可能被 Iron Chariot 攻击，以23703的血量承受了82173的伤害。由于dot等原因，治疗的量值并不准确，误差在一秒左右。
 
-When somebody dies, the last thing they took damage from is listed in the log.  For example, if the log specifies: ":skull: Poutine: Iron Chariot (82173/23703)" this means that Poutine most likely died to Iron Chariot, taking 82173 damage and having 23703 health at the time.  The health value itself is not perfect and may be slightly out of date by a ~second due to a hot tick or multiple simultaneous damage sources.
+当失误发生时，Oopsy raidsy会生成警告 (:warning:) 和失误 (:no_entry_sign:) 消息来解释发生了什么。
 
-When mistakes are made that are avoidable, oopsy logs warning (:warning:) and failure (:no_entry_sign:) messages, explaining what went wrong.
-
-Mistake triggers are specified for individual fights in the [ui/oopsyraidsy/data](ui/oopsyraidsy/data) folder.
+失误的触发器位于 [ui/oopsyraidsy/data](ui/oopsyraidsy/data) 文件夹内。
 
 ![oopsy screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_oopsy.png)
 
 ### [jobs](ui/jobs) 模块
 
-研究中，翻译会在测试可用后进行。
+使用这个模块，需要将 cactbot 指定为 **ui/jobs/jobs.html**
 
-To use this module, point cactbot at **ui/jobs/jobs.html**
+这个模块提供了HP，MP和TP量条，也包含了raid中的某些buff的图标与计时条。
+它同样也可以给你的食物buff提供计时器，用以raid或练级。
 
-This module provides health, mana, and tp bars, as well as icons and timer bars for big raid buffs such as
-The Balance and Trick Attack. It also features a food buff warning to keep up your food buff when leveling
-or raiding, and a visual pull countdown.
+这个插件对于某些职业的适配较好，但是对于其他职业却 *需要很多的* 进一步工作。
 
-It has more fleshed out support for some jobs but is *strongly* a Work In Progress for others.
+* 赤魔法师: 显示黑白魔元，跟踪赤飞石、赤火炎和冲击的buff剩余时间，显示近战三连的进度等等。
+* 战士: 显示兽魂，跟踪剩下的风暴眼buff足够打几个gcd。
+* 武僧: 显示斗气层数和疾风迅雷剩余时间，并追踪武僧的对应buff和debuff。
 
-* Red Mage: Shows white/black mana, tracks procs for Verstone, Verfire and Impact, and shows the state of the melee combo in progress.
-* Warrior: Shows the beast amount, and tracks the remaining Storm's Eye buff time in gcds.
-* Monk: Shows chakra count, remaining greased lightning time, and tracks monk buffs and debuffs.
-
-In this screenshot, the jobs module is highlighted for the Red Mage job. The health and mana bars, as well
-as Red Mage white/black mana tracking is circled in purple, with the large raid buff tracking pointed to
-beside it in orange. The first step of the melee combo has been executed, which is displayed as the yellow
-box above the health bar. The proc tracking is circled below in green.
+在下列截图中，赤魔法师的jobs模块被高亮了出来。HP量条，黑白魔元量条被紫色圈出，对应的raid buff用橘黄色指出。
+近战三连的第一连已经打出，所以最上面的有一个黄条，而绿色圈出的是赤飞石、赤火炎和冲击的buff剩余时间。
 
 ![jobs screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/Jobs.png)
 
 ### [eureka](ui/eureka) 模块
 
-研究中，翻译会在测试可用后进行。
+使用这个模块，需要将 cactbot 指定为 **ui/eureka/eureka.html**
 
-To use this module, point cactbot at **ui/eureka/eureka.html**
+这个模块提供了NM出现和击杀的自动跟踪。同样也提供了对应的天气、夜晚的计时器，同时可以通过`/sh`命令从聊天框中同步击杀时间
+（要求以ffxiv-eureka的跟踪网站导出的`/sh`）。任何聊天框中的地址信息也会被在地图上标注出来。
 
-This module provides automatic tracking of NMs that are popped or have
-been killed.  It shows gales/night timers and any local tracker link
-that has been pasted in chat.  Any flags in chat are also temporarily
-included on the map.
+目前它不会自动从tracker直接更新数据，但是你可以通过点击"复制已杀死的NM"并粘贴到聊天框中同步。
+举例为 `/echo 冷却中的NM: 魔虫 (119分钟) → 白泽 (119分钟) → 塔克西姆 (119分钟) → 苏罗毗 (119分钟)` 。
 
-It currently does not read the tracker information directly.  However,
-if you click on the left/red "Copy killed NMs" button in the tracker to
-copy the list of currently dead NMs, you can paste it in game, e.g.
-`/echo ★ NMs on cooldown: Serket (7m) > Julika (24m) > Poly (54m)`
-
-If you do not see the emoji, make sure you have installed [this Windows update](https://support.microsoft.com/en-us/help/2729094/an-update-for-the-segoe-ui-symbol-font-in-windows-7-and-in-windows-ser).
+如果你看不到天气emoji图标，请安装 [此Windows更新](https://support.microsoft.com/en-us/help/2729094/an-update-for-the-segoe-ui-symbol-font-in-windows-7-and-in-windows-ser)。
 
 ![eureka screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_eureka.png)
 
 ### [fisher](ui/fisher) 模块
 
 研究中，翻译会在测试可用后进行。
+
+獭爹不会玩钓鱼，摸了。
 
 To use this module, point cactbot at **ui/fisher/fisher.html**
 
