@@ -83,7 +83,6 @@ triggers/lakshmi-ex.js
 triggers/orbonne_monastery.js
 triggers/rathalos-ex.js
 triggers/ravana-ex.js
-triggers/cn-seiryu-ex.js
 triggers/seiryu-ex.js
 triggers/sephirot-ex.js
 triggers/shinryu-ex.js
