@@ -1,6 +1,6 @@
 'use strict';
 
-class CactbotLanguageCN extends CactbotLanguage {
+class CactbotLanguageCn extends CactbotLanguage {
   constructor(playerName) {
     super('cn', playerName);
   }
@@ -64,5 +64,5 @@ class CactbotLanguageCN extends CactbotLanguage {
 }
 
 UserConfig.registerLanguage('cn', function() {
-  gLang = new CactbotLanguageCN();
+  gLang = new CactbotLanguageCn();
 });
