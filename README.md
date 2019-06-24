@@ -226,13 +226,9 @@ Follow all the steps above for installing cactbot first.
 
 ### [fisher](ui/fisher) 模块
 
-研究中，翻译会在测试可用后进行。
+使用这个模块，需要将 cactbot 指定为 **ui/fisher/fisher.html**
 
-獭爹不会玩钓鱼，摸了。
-
-To use this module, point cactbot at **ui/fisher/fisher.html**
-
-When you cast your line at a fishing hole, this module keeps track of when you reel in particular fish so that you know what you might be getting when you hook it.
+当你在钓鱼场中投下鱼线时，这个模块会记录你何时钓起特定的鱼，以便得知下一次钓鱼时可能会得到什么。
 
 ![fishing screenshot](https://github.com/Bluefissure/cactbot/raw/master/screenshots/promo_fishing.png)
 
@@ -315,3 +311,4 @@ cactbot 基于最终幻想14的英语、德语与法语客户端进行测试与�
 和日志事件的 [触发器](ui/raidboss/data/triggers) 可能由于ACT日志中的对应名称不匹配而失效。
 
 听说某獭姓宠物的爹爹正在召集人手增强触发器/时间轴来进一步支持其他（指中国）服务器。
+
