@@ -28,7 +28,7 @@ let gBossFightTriggers = [
   },
   {
     id: 'o4s-exdeath',
-    zoneRegex: /^(Deltascape V4.0 \(Savage\)|欧米茄零式时空狭缝 \(德尔塔幻境5\))$/,
+    zoneRegex: /^(Deltascape V4.0 \(Savage\)|欧米茄零式时空狭缝 \(德尔塔幻境4\))$/,
     startRegex: /:(Exdeath uses Dualcast|艾克斯迪司 uses 连续咏唱)/,
     endRegex: /:The limit gauge resets!/,
     countdownStarts: false,
