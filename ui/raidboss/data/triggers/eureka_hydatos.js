@@ -12,6 +12,7 @@
       infoText: {
         en: 'Stop Moving',
         de: 'Stehenbleiben',
+        cn: '停止移动',
       },
     },
     {
@@ -22,6 +23,7 @@
       alertText: {
         en: 'Shields and Mitigation',
         de: 'Schilde und Abschwächungen',
+        cn: '开盾减伤',
       },
     },
     {
@@ -33,6 +35,7 @@
       infoText: {
         en: 'Pop Eurekan Potions',
         de: 'Eureka-Heiltränke benutzen',
+        cn: '磕优雷卡回复药',
       },
     },
     {
@@ -43,6 +46,7 @@
       infoText: {
         en: 'Black Hole Soon',
         de: 'Schwarzes Loch',
+        cn: '黑洞警告',
       },
     },
   ],
