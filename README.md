@@ -104,7 +104,9 @@ OverlayPlugin，而不是它的原作者RainbowMage的版本。
 
     注意：OverlayPlugin\\ 也可以按照您的喜好重命名。
 
-1. 重启ACT.
+1. （如果您使用的是便携版/整合版ACT）从[此处](https://github.com/Bluefissure/cactbot_cn/releases)下载整合版ACT对应的dll文件，替换`OverlayPlugin\addons\CactbotOverlay.dll`文件。（请注意，整合版默认的OverlayPlugin并非hibiyasleep所维护版本，如[出现问题](#可能出现的错误与解决方案)需要自行替换为hibiyasleep版本。）
+
+1. 重启ACT。
 
 1. 在ACT的OverlayPlugin选项卡中添加cactbot的悬浮窗，并选择类型为`cactbot` 。
 
@@ -311,4 +313,5 @@ cactbot 基于最终幻想14的英语、德语与法语客户端进行测试与�
 和日志事件的 [触发器](ui/raidboss/data/triggers) 可能由于ACT日志中的对应名称不匹配而失效。
 
 听说某獭姓宠物的爹爹正在召集人手增强触发器/时间轴来进一步支持其他（指中国）服务器。
+
 
