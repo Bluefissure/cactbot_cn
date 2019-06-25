@@ -1856,7 +1856,7 @@ let Options = {
             de: 'Wächter',
             fr: 'Gardien',
             ja: 'Watcher',
-            cn: '起源',
+            cn: '守望者',
           },
           mobName: {
             en: 'Provenance Watcher',
@@ -1870,7 +1870,7 @@ let Options = {
             de: 'Kristallwächter',
             fr: 'Provenance Watcher',
             ja: 'プロヴェナンス・ウォッチャー',
-            cn: '起源',
+            cn: '守望者',
           },
           x: 32.7,
           y: 19.5,
