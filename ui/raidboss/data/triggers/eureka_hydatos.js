@@ -957,6 +957,9 @@
     {
       "locale": "cn",
       "replaceSync": {
+        "The Shin-Zantetsuken Containment Unit will be sealed off": "距真·斩铁剑封印区被封锁还有",
+        "The Lance of Virtue Containment Unit will be sealed off": "距美德之枪封印区被封锁还有",
+        "The Proto Ozma Containment Unit will be sealed off": "距奥兹玛原型封印区被封锁还有",
         "Art": "亚特",
         "Owain": "欧文",
         "Arsenal Centaur": "兵武半人马",
@@ -972,8 +975,6 @@
         "Ozma": "奥兹玛",
         "Shadow": "奥兹玛原型之影",
         "Cloudlarker": "翻云狮鹫",
-        "The Shin-Zantetsuken Containment Unit will be sealed off": "距真·斩铁剑封印区被封锁还有",
-        "The Lance of Virtue Containment Unit will be sealed off": "距美德之枪封印区被封锁还有",
         "is no longer sealed": "的封锁解除了",
       },
       "replaceText": {
