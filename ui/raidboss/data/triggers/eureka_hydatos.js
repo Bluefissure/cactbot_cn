@@ -326,7 +326,7 @@
       id: 'BA Owain Fire Element',
       regex: / 00:0044:Munderg, turn flesh to ash/,
       regexDe: / 00:0044:Munderg, entfessele den Flammeneid/,
-      regexCn: / 00:0044:红颈妖枪, turn flesh to ash/,  //FIXME
+      regexCn: / 00:0044:红颈妖枪，点燃一切/,
       condition: function(data, matches) {
         return data.side == 'east';
       },
@@ -345,7 +345,7 @@
       id: 'BA Owain Ice Element',
       regex: / 00:0044:Munderg, turn blood to ice/,
       regexDe: / 00:0044:Munderg, das Eis der Ewigkeit soll sie für Äonen bannen/,
-      regexCn: / 00:0044:红颈妖枪, turn blood to ice/,  //FIXME
+      regexCn: / 00:0044:红颈妖枪，冻结万物/,
       condition: function(data, matches) {
         return data.side == 'east';
       },
