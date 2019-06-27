@@ -104,7 +104,7 @@ OverlayPlugin，而不是它的原作者RainbowMage的版本。
 
     注意：OverlayPlugin\\ 也可以按照您的喜好重命名。
 
-1. （如果您使用的是便携版/整合版ACT）从[此处](https://github.com/Bluefissure/cactbot_cn/releases)下载整合版ACT对应的dll文件，替换`OverlayPlugin\addons\CactbotOverlay.dll`文件。（请注意，整合版默认的OverlayPlugin并非hibiyasleep所维护版本，如[出现问题](#可能出现的错误与解决方案)需要自行替换为hibiyasleep版本。）
+1. （如果您使用的是便携版/整合版ACT）请参考[此处](https://github.com/Bluefissure/cactbot_cn/releases)的文档。
 
 1. 重启ACT。
 
