@@ -69,7 +69,7 @@ OverlayPlugin，而不是它的原作者RainbowMage的版本。
 
 ### 安装 cactbot
 
-1. 下载 [最新版本](https://github.com/quisquous/cactbot/releases/latest) 的 cactbot-version-number.zip 文件。  (不要下载成源代码，除非您希望自己编译)
+1. 下载 [0.9.5版本](https://github.com/quisquous/cactbot/releases/tag/v0.9.5) 的 cactbot-0.9.5.zip 文件。  (不要下载成源代码，除非您希望自己编译)
 
 1. 右键压缩文件，点击属性，选中“解除锁定”。
 
