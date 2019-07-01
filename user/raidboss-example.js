@@ -98,7 +98,11 @@ Options.Triggers = [
     zoneRegex: /.*/,
     triggers: [
       {
-        regex: /:.*被.*打倒了/,
+        regex: /:(\y{Name})被.*打倒了/,
+        // 只有自己嗝屁才触发：
+        condition: function(data, matches) {
+          return matches[1] == data.me;
+        },
         alarmText: '你嗝屁了',
       },
     ],
