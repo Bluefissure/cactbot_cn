@@ -32,7 +32,7 @@
       },
       infoText: function(data, matches) {
         return {
-          en: 'Ultimatum: ' + data.ShortName(matches[1]);
+          en: 'Ultimatum: ' + data.ShortName(matches[1]),
           cn: '最后通牒: ' + data.ShortName(matches[1]),
         };
       },
@@ -67,7 +67,7 @@
       },
       infoText: function(data, matches) {
         return {
-          en: 'Holmgang: ' + data.ShortName(matches[1]);
+          en: 'Holmgang: ' + data.ShortName(matches[1]),
           cn: '死斗: ' + data.ShortName(matches[1]),
         };
       },
