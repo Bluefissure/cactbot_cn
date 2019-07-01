@@ -18,8 +18,8 @@ hideall "--sync--"
 # You can see Owain's auto abilities, but the target is listed as empty.
 1002.5 "--sync--" sync /:Art:3956:/ window 1500,0
 1014.5 "Thricecull" sync /:Art:3934:/
-1023.1 "Legendcarver" sync /:Art:3928:/
-1030.7 "Legendspinner" sync /:Art:3929:/
+1023.1 "Legendspinner" sync /:Art:3929:/
+1030.7 "Legendcarver" sync /:Art:3928:/
 1038.8 "Acallam Na Senorach" sync /:Art:3935:/
 1047.5 "Mythcall" sync /:Art:3927:/
 1058.1 "Carver/Spinner" sync /:Art:392[89]:/
