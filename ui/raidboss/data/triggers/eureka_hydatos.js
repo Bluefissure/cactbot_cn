@@ -1023,7 +1023,6 @@
         "Cloud to Ground": "袭雷",
         "Bitter Barbs": "罪恶荆棘",
         "Levinwhorl": "涡雷",
-        "^-sync--": "--sync--",
         //  Absolute Virtue:
         "Meteor": "陨石",
         "Medusa Javelin": "美杜莎投枪",
