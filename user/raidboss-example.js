@@ -1,219 +1,204 @@
 'use strict';
 
-// Rename this file to `raidboss.js` and edit it to change the raidboss ui.
-// This file is Javascript.  Anything after "//" on a line is a comment.
-// If you edit this file, remember to reload ACT or click the "Reload overlay"
-// button on the raidboss CactbotOverlay.
-// If there are errors in this file, they will appear in the OverlayPlugin.dll
-// log window in ACT.
+// 将此文件重命名为`raidboss.js`并编辑它以更改raidboss ui。
+// 这个文件是Javascript。 在行上“//”之后的任何内容都是注释。
+// 如果你编辑这个文件，记得重新加载ACT或点击CactbotOverlay上的
+// “Reload Overlay”按钮。
+// 如果此文件中存在错误，它们将出现在ACT中OverlayPlugin.dll的
+// 日志窗口中。
 
+// 强行指定语言为`cn`，用以适配国服。
+// 如果在国际服使用，需要去掉/注释这一行。
+Options.Language = 'cn';
 
-// If false, no timeline of upcoming events will be displayed during fights.
+// 如果为false，则在战斗期间不会显示即将发生的事件的时间轴。
 Options.TimelineEnabled = true;
 
-// If false, triggers and timelines will not show or speak text, nor play
-// sounds.
+// 如果为false，触发器和时间线将不会显示文本，也不会播放声音
 Options.AlertsEnabled = true;
 
-// If false, then visual text alerts are not shown for triggers.
+// 如果为false，则不会为触发器显示可视文本警报。
 Options.TextAlertsEnabled = true;
 
-// If false, then sound alerts are not played.
+// 如果为false，则不播放声音警报。
 Options.SoundAlertsEnabled = true;
 
-// If true, then text-to-speech alerts are read aloud.  Text-to-speech takes
-// priority over custom sounds and text noises.  If a trigger does not have
-// a tts entry then it will fall back on text and sound (if turned on).
+// 如果为true，则大声警报TTS。 TTS优先于自定义声音和文本噪音。 
+// 如果触发器没有TTS条目，那么它将变成文本和声音警报（如果打开）。
 Options.SpokenAlertsEnabled = false;
 
-// Will override the singular TTS alerts if a group alert is set for a specific trigger
-// Change phrasing to make sense in a group setting
+// 如果为特定触发器设置了组警报，则将覆盖单个TTS警报
+// 在组设置中更改短语有意义
 Options.GroupSpokenAlertsEnabled = false;
 
 
-// Show timer bars for events that will happen in this many seconds or less.
+// 时间轴显示即将发生的事件的范围（秒）。
 Options.ShowTimerBarsAtSeconds = 30;
 
-// Once a timer bar reaches 0, keep it around this long after.
+// 当时间轴事件倒计时为0时，保持条目持续多少秒不消失。
 Options.KeepExpiredTimerBarsForSeconds = 0.7;
 
-// Change the bar color to highlight it is coming up when this many seconds
-// are left on it.
+// 设置时间轴将即将多少秒之内的事件高亮。
 Options.BarExpiresSoonSeconds = 8;
 
-// Number of bars to show in the space given to the UI by css.
+// css给UI提供的区域中能显示的多少条时间轴。
 Options.MaxNumberOfTimerBars = 6;
 
 
-// Path to sound played for info-priority text popups, or when "Info" is
-// specified as the sound name.
+// 为Info优先级的文本指定播放声音的路径。
 Options.InfoSound = '../../resources/sounds/freesound/percussion_hit.ogg';
 
-// Path to sound played for alert-priority text popups, or when "Alert" is
-// specified as the sound name.
+// 为Alert优先级的文本指定播放声音的路径。
 Options.AlertSound = '../../resources/sounds/BigWigs/Alert.ogg';
 
-// Path to sound played for alarm-priority text popups, or when "Alarm" is
-// specified as the sound name.
+// 为Alarm优先级的文本指定播放声音的路径。
 Options.AlarmSound = '../../resources/sounds/BigWigs/Alarm.ogg';
 
-// Path to sound played when "Long" is specified as the sound name.
+// 指定“Long”声音的路径。
 Options.LongSound = '../../resources/sounds/BigWigs/Long.ogg';
 
-// Volume between 0 and 1 to play the InfoSound at.
+// InfoSound的音量大小。
 Options.InfoSoundVolume = 1;
 
-// Volume between 0 and 1 to play the AlertSound at.
+// AlertSound的音量大小。
 Options.AlertSoundVolume = 1;
 
-// Volume between 0 and 1 to play the AlarmSound at.
+// AlertSound的音量大小。
 Options.AlarmSoundVolume = 1;
 
-// Volume between 0 and 1 to play the LongSound at.
+// LongSound的音量大小。
 Options.LongSoundVolume = 1;
 
-// A set of nicknames to use for players, when trying to shorten names.
+// 一组用于玩家的昵称，用以缩短名字。
 Options.PlayerNicks = {
   'Darkest Edgelord': 'Mary',
   'Captain Jimmy': 'Jimmy',
   'Pipira Pira': '&#x1F41F;',
 };
 
-// A set of triggers to be ignored. The key is the 'id' of the trigger, and
-// the value should be true if the trigger is to be ignored, whereas false
-// will have no effect.  The trigger ids can be found in the trigger files for
-// each fight in the files inside of this directory:
+// 一组要忽略的触发器。 键是触发器的“id”，如果要忽略触发器，
+// 则值应该为true，而false将不起作用。 触发器ID可以在此目录内
+// 文件中的每个战斗的触发器文件中找到：
 // https://github.com/quisquous/cactbot/tree/master/ui/raidboss/data/triggers
 Options.DisabledTriggers = {
-  // Disable the /psych trigger from `test.js` in Summerford Farms.
+  // 禁用盛夏农庄中`test.js`的/psych触发器。
   'Test Psych': true,
-  // Disable the "eye lasers" trigger from `drowned_city_of_skalla.js`.
+  // 禁用`drowned_city_of_skalla.js`的"eye lasers"触发器。
   'Hrodric Words': true,
 };
 
 
-// An array of user-defined triggers, in the format defined in the readme:
+// 一个用户自定义的触发器列表，详情请见：
 // https://github.com/quisquous/cactbot/tree/master/ui/raidboss/data/triggers
 Options.Triggers = [
 
-  // (1) Simple example trigger: show text on screen when you die.
+  // (1) 最简单的样例触发器：你嗝屁了
   {
-    // Match every zone.
+    // 匹配每个区域：
     zoneRegex: /.*/,
     triggers: [
       {
-        regex: /:You are defeated by/,
-        alarmText: 'YOU DIED',
+        regex: /:.*被.*打倒了/,
+        alarmText: '你嗝屁了',
       },
     ],
   },
 
-  // You can add other triggers for other zones too.  Here's more examples:
+  // 你也可以给特定的区域添加触发器，例子如下：
   //
-  // (2) Maybe you want a silly kissy noise whenever you a blow a kiss in
-  // a housing zone!
+  // (2) 也许每当你在住宅区吹一个吻（/blowkiss）时，你都想要一个愚蠢的亲吻声！
   {
-    zoneRegex: /^(Mist|The Goblet|The Lavender Beds|Shirogane)$/,
+    zoneRegex: /^(海雾村|高脚孤丘|薰衣草苗圃|白银乡)$/,
     triggers: [
       {
-        regex: /You blow a kiss/,
+        regex: /送出了飞吻/,
         sound: '../../resources/sounds/PowerAuras/bigkiss.ogg',
         volume: 0.5,
       },
     ],
   },
 
-  // (3) Maybe you want to modify some existing timeline and triggers:
+  // (3) 也许您想要修改一些现有的时间轴和触发器：
   //
-  // Add some extra triggers to the test timeline.  To use it, see:
+  // 在测试时间轴上添加一些额外的触发器。 要使用它，请参阅：
   // https://github.com/quisquous/cactbot/blob/master/ui/raidboss/data/timelines/test.txt
   {
-    // The zone this should apply to.
-    // This should match the zoneRegex in the triggers file.
-    zoneRegex: /^Middle La Noscea$/,
+    // 时间轴/触发器适用的区域。
+    // 这应该与触发器文件中的zoneRegex匹配。
+    zoneRegex: /^(Middle La Noscea|中拉诺西亚)$/,
 
-    // Add some additional timeline events to the test timeline.
+    // 在测试时间轴中添加一些额外的时间轴事件。
     timeline: `
-      # Note: Hash marks are comments inside of a timeline file.
-      # This format is the same as ACT timeline.
-
-      # Add a new personal event to the test timeline.
-      5.2 "(Remember To Use Feint!)"
-
-      # Remind yourself to shield the tank 5 seconds before final sting.
-      infotext "Final Sting" before 5 "shield the tank"
-
-      # Events you don't like, you can hide.  This gets rid of "Long Castbar".
-      hideall "Long Castbar"
+      # 注意：井号是时间轴文件中的注释。
+      # 此格式与ACT时间轴相同。
+      # 在测试时间轴中添加新的个人事件。
+      5.2 "(记得使用牵制！)"
+      # 提醒自己在终极针前5秒保护坦克。
+      infotext "终极针" before 5 "保护坦克"
+      # 你可以隐藏你不喜欢的事件。 这隐藏了“长时间咏唱”。
+      hideall "长时间咏唱"
     `,
 
-    // Add some additional triggers that will go off in Summerford Farms.
+    // 添加一些其他触发器，这些触发器将在盛夏农庄中。
     triggers: [
-      // If you provoke the striking dummy (or anything), this will trigger.
+      // 如果你挑衅了，这个触发器将触发。
       {
         id: 'User Example Provoke',
-        regex: /You use Provoke/,
-        infoText: 'Provoke!',
-        tts: 'provoke',
+        regex: /You use 挑衅/,
+        infoText: '挑衅！',
+        tts: '挑衅',
       },
 
-      // A more complicated regen trigger.
+      // 一个更复杂的再生触发器
       {
         id: 'User Example Regen',
-        // This will match log lines from ACT that look like this:
-        // "Nacho Queen gains the effect of Regen from Taco Cat for 21.00 Seconds."
+        // 这将匹配如下所示的来自ACT的日志行：
+        // "蓝色裂痕 gains the effect of 再生 from 獭獭 for 21.00 Seconds."
         regex: /gains the effect of Regen from \y{Name} for (\y{Float}) Seconds/,
+        regexCn: /gains the effect of 再生 from \y{Name} for (\y{Float}) Seconds/,
         delaySeconds: function(data, matches) {
-          // Wait the amount of seconds regen lasts before reminding you to
-          // reapply it.  This is not smart enough to figure out if you
-          // cast it twice, and is left as an exercise for the reader to
-          // figure out how to do so via storing variables on `data`.
+          // 等待再生持续的秒数，然后再提醒你续再生。
+          // 这看起来很蠢，因为无法弄清楚你是否用了两次再生。
+          // 这只是一个让你们清楚如何在data上存储变量的例子。
           return data.ParseLocaleFloat(matches[1]);
         },
-
-        alertText: 'Regen Reminder',
-        tts: 'regen',
+        alertText: '再生警告',
+        tts: '再生',
       },
     ],
   },
 
 ];
 
-// Per trigger options.  By default, each trigger uses the global options
-// of TextAlertsEnabled, SoundAlertsEnabled, and SpokenAlertsEnabled.
-// These global options are set up top in this file.
+// 每个触发器选项。 默认情况下，每个触发器都使用TextAlertsEnabled，SoundAlertsEnabled
+// 和SpokenAlertsEnabled的全局选项。这些全局选项在此文件中设置为顶部。
 //
-// If a per trigger entry is present (regardless if true/false), it will
-// override whatever the global option is set to.
+// 如果存在每个触发条目（无论是否为真/假），它将覆盖全局选项设置的任何内容。
 //
-// SoundOverride (if present) behaves like 'sound' on an individual trigger, in
-// that it will take the place of the info/alert/alarm noise if no sound has
-// been specified.  SoundAlert (or SoundAlertsEnabled) must still be true for
-// that override to be played.
+// SoundOverride（如果存在）在单个触发器上的行为类似于'sound'，因为如果没有指定声音，
+// 它将取代info/alert/alarm警报。 对于要播放的覆盖，SoundAlert（或SoundAlertsEnabled）
+// 仍必须为true。
 //
-// Here's some example per trigger options that modify the test triggers
-// in Summerford Farms:
+// 以下是修改盛夏农庄中测试触发器的每个触发器选项的示例：
 // https://github.com/quisquous/cactbot/blob/master/ui/raidboss/data/triggers/test.js
 
 Options.PerTriggerOptions = {
-  // Just like Options.DisabledTriggers, this is the trigger id to apply to.
-  // This overrides the settings for the "/laugh" trigger from the test
-  // triggers.  You can try this out by teleporting to Summerford Farms
-  // and /laugh at a striking dummy.  It will use these settings and moo.
+  // 就像Options.DisabledTriggers一样，这是要应用的触发器ID。 
+  // 这将覆盖测试触发器中“/laugh”触发器的设置。 您可以通过传送到盛夏农庄
+  // 来测试这一点，并且/laugh一个木人。 它将使用这些设置。
   'Test Laugh': {
-    // Play the text to speech.
+    // 播放TTS
     SpeechAlert: false,
-    // Play the sound alert.
+    // 播放声音提示
     SoundAlert: true,
-    // Show the info/alert/alarm text on screen.
+    // 屏幕显示 info/alert/alarm 文本
     TextAlert: false,
-    // Play this sound (replacing any sound from the original).
+    // 播放此声音（替换原始声音）
     SoundOverride: '../../resources/sounds/WeakAuras/CowMooing.ogg',
-    // Play the sound (if any) at this volume.
+    // 在此音量播放声音（如果有）
     VolumeOverride: 0.3,
   },
-  // This makes /poke-ing a striking dummy in Summerford Farms only
-  // use text to speech with no visual text indicator or other sound.
+  // 在盛夏农庄 /poke 一个木人只使用没有视觉文本指示器或其他TTS。
   'Test Poke': {
     SpeechAlert: true,
     SoundAlert: false,
@@ -223,8 +208,7 @@ Options.PerTriggerOptions = {
       return 'Custom Poke (' + data.pokes + ')';
     },
   },
-  // This makes /clap-ing a striking dummy override the default
-  // behavior to use the group TTS
+  // 这使得 /clap 一个木人覆盖默认行为以使用组TTS
   'Test Clap': {
     GroupSpeechAlert: true,
     SpeechAlert: true,
@@ -236,4 +220,3 @@ Options.PerTriggerOptions = {
     },
   },
 };
-
