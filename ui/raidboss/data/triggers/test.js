@@ -26,7 +26,7 @@
     },
     function(data) {
       // <_<
-      let shortName = data.me.substring(0, data.me.indexOf(' '));
+      let shortName = data.me.indexOf(' ')>=0?data.me.substring(0, data.me.indexOf(' ')):data.me;
       return [
         '40 "Death To ' + shortName + '!!"',
         'hideall "Death"',
@@ -37,14 +37,17 @@
     {
       id: 'Test Angry Dummy',
       regex: /(Angry Dummy)/,
+      regexCn: /愤怒的木人/,
       beforeSeconds: 2,
       infoText: function(data, matches) {
         return {
           en: 'Stack for ' + matches[1],
+          cn: '木人处集合',
         };
       },
       tts: {
         en: 'Stack',
+        cn: '集合',
       },
     },
   ],
@@ -70,9 +73,11 @@
       replaceText: {
         'Final Sting': '终极针',
         'Almagest': '至高无上',
-        'Angry Dummy': '木人',
+        'Angry Dummy': '愤怒的木人',
         'Long Castbar': '长时间咏唱',
         'Dummy Stands Still': '木人8动了',
+        'Super Tankbuster': '超级无敌转圈死刑',
+        'Death To': '嗝屁攻击：',
         'Death': '嗝屁',
         'Engage': '战斗开始',
       },
