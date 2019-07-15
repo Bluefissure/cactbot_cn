@@ -18,8 +18,8 @@ hideall "--sync--"
 # You can see Owain's auto abilities, but the target is listed as empty.
 1002.5 "--sync--" sync /:Art:3956:/ window 1500,0
 1014.5 "Thricecull" sync /:Art:3934:/
-1023.1 "Legendspinner" sync /:Art:3929:/
-1030.7 "Legendcarver" sync /:Art:3928:/
+1023.1 "Legendcarver" sync /:Art:3928:/
+1030.7 "Legendspinner" sync /:Art:3929:/
 1038.8 "Acallam Na Senorach" sync /:Art:3935:/
 1047.5 "Mythcall" sync /:Art:3927:/
 1058.1 "Carver/Spinner" sync /:Art:392[89]:/
@@ -248,17 +248,17 @@ hideall "--sync--"
 ### Initial Star Form (no meteor)
 5021.5 "Star Form" sync /:Proto Ozma:37B2:/
 5028.5 "--sync--" sync /:Proto Ozma:37B4:/
-5029.5 "Mourning Star" sync /:Proto Ozma:37B5:/
+5029.5 "Mourning Star" sync /:Ozma:37B5:/
 
-5032.5 "Soak Attack" sync /:Proto Ozma:37B6:/
-5038.5 "Soak Attack" sync /:Proto Ozma:37B6:/
-5044.5 "Soak Attack" sync /:Proto Ozma:37B6:/
+5032.5 "Soak Attack" sync /:Ozma:37B6:/
+5038.5 "Soak Attack" sync /:Ozma:37B6:/
+5044.5 "Soak Attack" sync /:Ozma:37B6:/
 
 5051.5 "Shooting Star" sync /:Proto Ozma:37B7:/
 
-5056.5 "Soak Attack" sync /:Proto Ozma:37B6:/
-5062.5 "Soak Attack" sync /:Proto Ozma:37B6:/
-5068.5 "Soak Attack" sync /:Proto Ozma:37B6:/
+5056.5 "Soak Attack" sync /:Ozma:37B6:/
+5062.5 "Soak Attack" sync /:Ozma:37B6:/
+5068.5 "Soak Attack" sync /:Ozma:37B6:/
 
 5070.5 "Sphere Form" sync /:Proto Ozma:(37B3|37A5|379F):/
 5079.5 "Black Hole" sync /:Proto Ozma:379D:/
@@ -290,23 +290,23 @@ hideall "--sync--"
 5304.5 "Shade Ability" # sync /:Shadow:(37A7|37B5|37A1):/
 
 5307.0 "--sync--" sync /:Proto Ozma:37A6:/
-5308.7 "Execration" sync /:Proto Ozma:37A7:/
+5308.7 "Execration" sync /:Ozma:37A7:/
 
 5311.0 "Acceleration Bomb" sync /:Proto Ozma:37AA:/
-5313.0 "Bleed Attack" sync /:Proto Ozma:37AD:/
-5319.0 "Bleed Attack" sync /:Proto Ozma:37AD:/
+5313.0 "Bleed Attack" sync /:Ozma:37AD:/
+5319.0 "Bleed Attack" sync /:Ozma:37AD:/
 
 5332.0 "Meteor (Adds)" sync /:Cloudlarker:37B0:/
-5337.0 "Bleed Attack" sync /:Proto Ozma:37AD:/
-5343.0 "Bleed Attack" sync /:Proto Ozma:37AD:/
+5337.0 "Bleed Attack" sync /:Ozma:37AD:/
+5343.0 "Bleed Attack" sync /:Ozma:37AD:/
 
 5346.0 "Random Shade" sync /:Ozmashade:(37A4|37B2|379E):/
 5349.0 "Acceleration Bomb" sync /:Proto Ozma:37AA:/
 5353.0 "--sync--" sync /:Ozmashade:(37A6|37B4|37A0):/
 5354.5 "Shade Ability" # sync /:Shadow:(37A7|37B5|37A1):/
 
-5364.0 "Meteor (Stack)" sync /:Proto Ozma:37A8:/
-5370.0 "Bleed Attack" sync /:Proto Ozma:37AD:/
+5364.0 "Meteor (Stack)" sync /:Ozma:37A8:/
+5370.0 "Bleed Attack" sync /:Ozma:37AD:/
 
 5373.0 "Sphere Form" sync /:Proto Ozma:(37B3|37A5|379F):/
 5382.0 "Black Hole" sync /:Proto Ozma:379D:/
@@ -335,13 +335,13 @@ hideall "--sync--"
 5604.5 "Shade Ability" # sync /:Shadow:(37A7|37B5|37A1):/
 
 5607.0 "--sync--" sync /:Proto Ozma:37A0:/
-5608.5 "Flare Star" sync /:Proto Ozma:37A1:/
+5608.5 "Flare Star" sync /:Ozma:37A1:/
 
-5619.0 "Meteor (Stack)" sync /:Proto Ozma:37A8:/
+5619.0 "Meteor (Stack)" sync /:Ozma:37A8:/
 5622.0 "Holy" sync /:Proto Ozma:37A9:/
 
 5649.0 "Random Shade" sync /:Ozmashade:(37A4|37B2|379E):/
-5655.0 "Meteor (Stack)" sync /:Proto Ozma:37A8:/
+5655.0 "Meteor (Stack)" sync /:Ozma:37A8:/
 5656.0 "Holy" sync /:Proto Ozma:37A9:/
 5656.0 "--sync--" sync /:Ozmashade:(37A6|37B4|37A0):/
 5657.5 "Shade Ability" # sync /:Shadow:(37A7|37B5|37A1):/
@@ -371,20 +371,20 @@ hideall "--sync--"
 5903.0 "--sync--" sync /:Ozmashade:(37A6|37B4|37A0):/
 5904.5 "Shade Ability" # sync /:Shadow:(37A7|37B5|37A1):/
 5907.0 "--sync--" sync /:Proto Ozma:37B4:/
-5908.0 "Mourning Star" sync /:Proto Ozma:37B5:/
-5911.0 "Soak Attack" sync /:Proto Ozma:37B6:/
+5908.0 "Mourning Star" sync /:Ozma:37B5:/
+5911.0 "Soak Attack" sync /:Ozma:37B6:/
 5926.0 "Meteor (Adds)" sync /:Cloudlarker:37B0:/
 5929.0 "Shooting Star" sync /:Proto Ozma:37B7:/
-5938.0 "Soak Attack" sync /:Proto Ozma:37B6:/
-5944.0 "Soak Attack" sync /:Proto Ozma:37B6:/
+5938.0 "Soak Attack" sync /:Ozma:37B6:/
+5944.0 "Soak Attack" sync /:Ozma:37B6:/
 
 5949.0 "Random Shade" sync /:Ozmashade:(37A4|37B2|379E):/
 5954.0 "Shooting Star" sync /:Proto Ozma:37B7:/
 5956.0 "--sync--" sync /:Ozmashade:(37A6|37B4|37A0):/
 5957.5 "Shade Ability" # sync /:Shadow:(37A7|37B5|37A1):/
-5959.0 "Soak Attack" sync /:Proto Ozma:37B6:/
-5959.0 "Soak Attack" sync /:Proto Ozma:37B6:/
-5965.0 "Soak Attack" sync /:Proto Ozma:37B6:/
+5959.0 "Soak Attack" sync /:Ozma:37B6:/
+5959.0 "Soak Attack" sync /:Ozma:37B6:/
+5965.0 "Soak Attack" sync /:Ozma:37B6:/
 
 5973.0 "Sphere Form" sync /:Proto Ozma:(37B3|37A5|379F):/
 5982.0 "Black Hole" sync /:Proto Ozma:379D:/
@@ -404,4 +404,3 @@ hideall "--sync--"
 6025.0 "Meteor (Adds)?"
 6028.0 "Shooting Star?"
 6031.0 "Meteor (Adds)?"
-

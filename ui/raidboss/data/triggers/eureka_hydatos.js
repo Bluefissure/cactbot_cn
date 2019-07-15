@@ -851,7 +851,7 @@
           return {
             en: 'Offtanks Get Orbs',
             de: 'Offtanks holt Kugeln',
-            cn: 'ST接线',
+            cn: 'ST撞球',
           };
         }
       },
@@ -972,7 +972,7 @@
         "Ball Lightning": "雷球",
         "Streak Lightning": "雷枪",
         "Ozmashade": "奥兹玛之影",
-        "Ozma": "奥兹玛",
+        "Ozma": "奥兹玛原型",
         "Shadow": "奥兹玛原型之影",
         "Cloudlarker": "翻云狮鹫",
         "is no longer sealed": "的封锁解除了",
