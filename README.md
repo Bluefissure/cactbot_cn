@@ -299,7 +299,7 @@ cactbot的Javascript API。  cactbot 会自动对结束的战斗分段，所以�
 
     此时 "Test bar", "ALARM TEXT", 和蓝色背景都会在Lock被选中后一起隐藏。
 
-1. 如果您需要测试时间轴与触发器，您可以传送到中拉诺西亚的盛夏农庄并且参考这个 [指南](ui/raidboss/data/timelines/test.txt)。
+1. 如果您需要测试时间轴与触发器，您可以传送到中拉诺西亚的盛夏农庄然后对木人行礼开始测试，告别结束测试。
 
 ## Cactbot自定义
 
