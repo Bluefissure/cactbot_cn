@@ -202,7 +202,6 @@ class Fisher {
   }
 
   handleBite() {
-    this.fishing = false;
     this.castEnd = new Date();
     this.ui.stopFishing();
   }
