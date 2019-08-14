@@ -25,7 +25,7 @@ class CactbotLanguageCn extends CactbotLanguage {
       Hypercharge: '超荷', // 0x2b0
       LeftEye: '巨龙左眼', // 0x4a0
       RightEye: '巨龙右眼', // 0x49f
-      Brotherhood: '义结金兰：攻击', // 0x49e
+      Brotherhood: '义结金兰：斗气', // 0x49e
       Devotion: '灵护', // 0x4bd
       FoeRequiem: '魔人的安魂曲', // up 0x8b, down 0x8c
 
@@ -42,11 +42,11 @@ class CactbotLanguageCn extends CactbotLanguage {
 
     this.kUIStrings = Object.freeze({
       // jobs: text on the pull countdown.
-      Pull: 'Pull',
+      Pull: '开怪',
     });
 
     this.countdownStartRegex = function() {
-      return Regexes.Parse(/距离战斗开始还有(\y{Float})秒！ /);
+      return Regexes.Parse(/距离战斗开始还有(\y{Float})秒！/);
     };
     this.countdownEngageRegex = function() {
       return /:战斗开始！/;
