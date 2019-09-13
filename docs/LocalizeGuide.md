@@ -19,7 +19,7 @@
 
 从4. 开始讲起，运行完`translate_fight.py`后生成的文件大概长成这样：
 
-```json
+```javascript
 {
   timelineReplace: [
     {
@@ -79,7 +79,7 @@
 
 - 绝神兵的触发器中，有这么一个id为"UWU Ifrit Fetters"的触发器，其匹配的正则如下：
 
-  ```json
+  ```javascript
   {
       id: 'UWU Ifrit Fetters',
       regex: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Infernal Fetters from/,
@@ -92,7 +92,7 @@
 
   由于`~effectNames`中有 `'Infernal Fetters': '火狱之锁',` 所以中文的regexCn会变成：
 
-  ```json
+  ```javascript
   regexCn: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 火狱之锁 from/,
   ```
 
@@ -112,13 +112,13 @@ python check_translation.py -f 触发器文件名称 -t
 
 之后，就需要在游戏过程中进行测试，但是由于每个触发器都被限定了工作区域，所以我们需要在触发器开头的`zoneRegex`中加入国服的区域名称，举例为：
 
-```json
+```javascript
 zoneRegex: /^(The Weapon's Refrain \(Ultimate\)|Unknown Zone \(309\))$/,
 ```
 
 加入国服的区域名称后变成：
 
-```json
+```javascript
 zoneRegex: /^(The Weapon's Refrain \(Ultimate\)|Unknown Zone \(309\)|究极神兵绝境战)$/,
 ```
 
