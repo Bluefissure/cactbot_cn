@@ -60,7 +60,7 @@
 }
 ```
 
-我们只处理`locale`为`cn`的即可，其中三个部分分别为：
+生成后，需要将生成`locale`为`cn`的这部分内容加入到触发器文件（triggers目录下的`*.js`文件）末尾的`timelineReplace`条目中，其中三个部分的作用分别为：
 
 - replaceSync: 替换时间轴同步时所使用的正则表达式匹配中的相关内容，主要包含怪物名字、技能名
 
@@ -77,28 +77,82 @@
 
   而在 sync 语句之后的 `/:Garuda:2B53:/` 则是同步时间轴所用的正则表达式，由于`replaceSync`中有 `'Garuda': '迦楼罗',` 所以替换后的正则表达式会变成 `/:迦楼罗:2B53:/`
 
-- 绝神兵的触发器中，有这么一个id为"UWU Ifrit Fetters"的触发器，其匹配的正则如下：
+- 绝神兵的触发器中，有这么一个id为"UWU Ifrit Fetters"的触发器，代码如下：
 
   ```javascript
   {
-      id: 'UWU Ifrit Fetters',
-      regex: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Infernal Fetters from/,
-      regexDe: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Infernofesseln from/,
-      regexFr: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Chaînes Infernales from/,
-      regexJa: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 炎獄の鎖 from/,
-      ...
+    id: 'UWU Ifrit Fetters',
+    regexKo: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 염옥의 사슬 from/,
+    regex: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Infernal Fetters from/,
+    regexDe: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Infernofesseln from/,
+    regexFr: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Chaînes Infernales from/,
+    regexJa: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 炎獄の鎖 from/,
+    condition: function(data, matches) {
+      return data.me == matches[1];
+  },
+    suppressSeconds: 45,
+  infoText: {
+      en: 'Fetters on YOU',
+      de: 'Fesseln auf DIR',
+      fr: 'Chaînes Infernales',
+    ja: '自分に炎獄の鎖',
+      ko: '사슬 → 나',
+    },
+    tts: {
+      en: 'Fetters',
+      de: 'Fesseln',
+      fr: 'Chaînes Infernales',
+      ja: '炎獄の鎖',
+      ko: '사슬',
+    },
   }
   ```
-
+  
   由于`~effectNames`中有 `'Infernal Fetters': '火狱之锁',` 所以中文的regexCn会变成：
-
+  
   ```javascript
   regexCn: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 火狱之锁 from/,
   ```
-
-  请注意，这部分regexCn需要通过运行`check_translation.py`自动添加，也就是步骤5. ，添加后手动进行修改用来保证正则匹配的准确性。
-
-处理完，请不要忘了将生成的cn这部分json加入到触发器文件末尾的`timelineReplace`条目中。
+  
+  请注意，这部分regexCn需要通过步骤5. 运行`check_translation.py`自动添加，建议在添加后进行手动修改来保证正则匹配的准确性。
+  
+  匹配的内容解决后，触发器的动作也需要进行本地化（汉化），也就是说，不能实际触发成功却提醒了一个英文的"Fetters on YOU"，所以我们需要在`infoText`、`alarmText`等Text条目和tts条目中添加cn的相关文本，全都添加之后应该变成：
+  
+  ```js
+  {
+    id: 'UWU Ifrit Fetters',
+    regexKo: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 염옥의 사슬 from/,
+    regex: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Infernal Fetters from/,
+    regexCn: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 火狱之锁 from/, //#1
+    regexDe: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Infernofesseln from/,
+    regexFr: /1A:\y{ObjectId}:(\y{Name}) gains the effect of Chaînes Infernales from/,
+    regexJa: /1A:\y{ObjectId}:(\y{Name}) gains the effect of 炎獄の鎖 from/,
+    condition: function(data, matches) {
+      return data.me == matches[1];
+    },
+    suppressSeconds: 45,
+    infoText: {
+      en: 'Fetters on YOU',
+      de: 'Fesseln auf DIR',
+      fr: 'Chaînes Infernales',
+      ja: '自分に炎獄の鎖',
+      ko: '사슬 → 나',
+      cn: '火狱之锁点名', //#2
+    },
+    tts: {
+      en: 'Fetters',
+      de: 'Fesseln',
+      fr: 'Chaînes Infernales',
+      ja: '炎獄の鎖',
+      ko: '사슬',
+      cn: '火狱之锁', //#3
+    },
+  }
+  ```
+  
+  其中，`//#1`可以通过python脚本自动添加，但是后面的`//#2`和`//#3`需要手动添加（因为无法自动判断如何处理机制，且国际服和国服的普遍打法也可能不同）。
+  
+  至于触发器如何运作，如何写自己的触发器，如何进行不同触发器间相关逻辑的实现，请参考 [cactbot高级用法](https://github.com/quisquous/cactbot/blob/master/AdvancedCactbot.md) 。
 
 ### 测试
 
