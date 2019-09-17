@@ -70,7 +70,7 @@
           return;
         return {
             en: 'Stack',
-            cn: '分散',
+            cn: '分摊',
         };
       },
       run: function(data) {
@@ -89,7 +89,7 @@
           return;
         return {
             en: 'Spread',
-            cn: '分摊',
+            cn: '分散',
         };
       },
       run: function(data) {
@@ -107,7 +107,7 @@
       infoText: function(data, matches) {
         return {
             en: 'Out of Middle',
-            cn: '转场',
+            cn: '脚下有泥 远离',
         };
       },
     },
