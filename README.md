@@ -13,7 +13,9 @@
 
 cactbot 是一个给 [最终幻想14](http://ff.sdo.com)开发的高难副本悬浮窗系统。本项目是 [Advanced Combat Tracker](http://advancedcombattracker.com/) 工具中 [hibiyasleep's OverlayPlugin](https://github.com/hibiyasleep/OverlayPlugin) 插件的插件。
 
-本项目为中文本地化的临时项目，原项目地址：[quisquous's cactbot](https://github.com/quisquous/cactbot)
+本项目为中文本地化的临时项目，由于在5.0上线后原项目提供了中文的支持，本项目停止更新，只提供文档的翻译与国服适配的方案。
+
+原项目地址：[quisquous's cactbot](https://github.com/quisquous/cactbot)。
 
 如果您想参与本地化过程，请参考[这篇文档](https://github.com/Bluefissure/cactbot_cn/blob/master/docs/LocalizeGuide.md)
 
@@ -104,7 +106,7 @@ OverlayPlugin，而不是它的原作者RainbowMage的版本。
 
     注意：OverlayPlugin\\ 也可以按照您的喜好重命名。
 
-1. （如果您使用的是便携版/整合版ACT）请参考[此处](https://github.com/Bluefissure/cactbot_cn/releases)的文档。
+1. 由于解析插件默认没有中文选项，请在`cactbot_cn\user`目录下，将`raidboss-example.js`复制为`raidboss.js`，并在第10行处添加`Options.Language = 'cn';` 从而强行设定语言为中文。（别的模块也类似）
 
 1. 重启ACT。
 
